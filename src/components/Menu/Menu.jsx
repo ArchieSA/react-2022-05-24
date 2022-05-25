@@ -6,8 +6,8 @@ export const Menu = ({menu}) => {
         <div>
           <p>Menu</p>
             <ul>
-                {menu.map(item => {
-                    return <li>{item}</li>
+                {menu.map((item, index) => {
+                    return <li key={index}>{item}</li>
                 })}
             </ul>
         </div>

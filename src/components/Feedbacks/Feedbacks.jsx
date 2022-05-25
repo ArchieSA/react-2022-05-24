@@ -5,8 +5,8 @@ export const Feedbacks = ({feedbacks}) => {
         <div>
           <p>Feedbacks</p>
           <ul>
-              {feedbacks.map(item => {
-                return <li>{item}</li>
+              {feedbacks.map((item, index) => {
+                return <li key={index}>{item}</li>
               })}
             </ul>
         </div>
