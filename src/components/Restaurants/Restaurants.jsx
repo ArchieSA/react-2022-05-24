@@ -1,22 +1,17 @@
-import React from 'react';
-import { Restaurant } from "../Restaurant/Restaurant";
+import { Restaurant } from '../Restaurant/Restaurant';
+import { restaurants } from './Restaurants.model';
 
 export const Restaurants = () => {
-    const restaurantName = 'CarambaRestaurant';
-    return (
-        <>
-            <div>
-                <Restaurant restaurantName={restaurantName} />
-            </div>
-            <div>
-                <Restaurant restaurantName="restaurant 2"/>
-            </div>
-            <div>
-                <Restaurant restaurantName="restaurant 3"/>
-            </div>
-            <div>
-                <Restaurant restaurantName="restaurant 4"/>
-            </div>
-        </>
-    );
-}
+  return (
+    <>
+      <h1>Restaurants:</h1>
+      <ul>
+        {restaurants.map(restaurant => (
+          <li key={restaurant.id}>
+            <Restaurant restaurant={restaurant} />
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
