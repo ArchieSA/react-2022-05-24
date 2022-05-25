@@ -17,6 +17,9 @@ export const Restaurants = () => {
             <div>
                 <Restaurant restaurantName="restaurant 4"/>
             </div>
+            <div>
+                <Restaurant restaurantName="restaurant 4"/>
+            </div>
         </>
     );
 }
