@@ -18,7 +18,7 @@ export const Restaurants = () => {
                 <Restaurant restaurantName="restaurant 4"/>
             </div>
             <div>
-                <Restaurant restaurantName="restaurant 4"/>
+                <Restaurant restaurantName="restaurant 5"/>
             </div>
         </>
     );
