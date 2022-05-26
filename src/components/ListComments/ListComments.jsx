@@ -1,8 +1,8 @@
 import React from "react";
 import Comment from "../Сomment/Comment";
 
-const ListComments = ({listTextComments}) => {
-    const listComments = listTextComments.map((e, i) => <Comment key = {i} textComment = {e} userName = {'User' + i}/>);
+const ListComments = ({listCommentsItem}) => {
+    const listComments = listCommentsItem.map((e, i) => <Comment key = {i} textComment = {e} userName = {'User' + i}/>);
 
     return (
         <>

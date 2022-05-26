@@ -7,9 +7,9 @@ export const Restaurant = ({ restaurantName, listProducts, listComments }) => {
         <div>
             {restaurantName || 'unknown restaurant'}
 
-            <Menu listNameProducts = {listProducts}/>
+            <Menu listMenuItem = {listProducts}/>
 
-            <ListComments listTextComments = {listComments}/>
+            <ListComments listCommentsItem = {listComments}/>
         </div>
     );
 }
