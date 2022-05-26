@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Restaurant = ({ restaurantName }) => {
+export const Restaurant = ({ restaurantName, children }) => {
     return (
-        <div>{restaurantName || 'unknown restaurant'}</div>
+        <div>{restaurantName || 'unknown restaurant'}{children}</div>
     );
 }
