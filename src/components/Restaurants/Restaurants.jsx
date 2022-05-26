@@ -1,122 +1,56 @@
-import React from 'react';
-import {Restaurant} from "../Restaurant/Restaurant";
-import {Menu} from "../Menu/Menu";
-import {Reviews} from "../Reviews/Reviews"
+import React from "react";
+import { Restaurant } from "../Restaurant/Restaurant";
 
 export const Restaurants = () => {
-    const restaurantName = 'CarambaRestaurant';
+    const restaurantName = "CarambaRestaurant";
     return (
         <>
             <div>
-                <Restaurant restaurantName={restaurantName}/>
-                <Menu menuItems={[
-                    {
-                        "name": "Суп 🍲"
-                    },
-                    {
-                        "name": "Салат 🥗"
-                    },
-                    {
-                        "name": "Хлеб 🥖"
-                    },
-                    {
-                        "name": "Компот 🥤"
-                    }
-                ]}/>
-                <Reviews reviewItem={[
-                    {
-                        "text": "Все супер! 🤩🤩🤩"
-                    },
-                    {
-                        "text": "Отличное место"
-                    },
-                    {
-                        "text": "Придем еще 👍"
-                    }
-                ]}/>
+                <Restaurant
+                    restaurantName={restaurantName}
+                    menuItems={["Суп1 🍲", "Салат 🥗", "Хлеб 🥖", "Компот 🥤"]}
+                    reviewItems={["Все супер! 🤩🤩🤩", "Отличное место", "Придем еще 👍"]}
+                />
             </div>
             <div>
-                <Restaurant restaurantName="restaurant 2"/>
-                <Menu menuItems={[
-                    {
-                        "name": "Блины 🥞"
-                    },
-                    {
-                        "name": "Борщ 🍲"
-                    },
-                    {
-                        "name": "Кебаб 🥙"
-                    },
-                    {
-                        "name": "Картофель фри 🍟"
-                    }
-                ]}/>
-                <Reviews reviewItem={[{
-                    "text": "Приятное место"
-                },
-                    {
-                        "text": "Уютно"
-                    },
-                    {
-                        "text": "Цены - супер"
-                    }]}/>
+                <Restaurant
+                    restaurantName="restaurant 2"
+                    menuItems={["Блины 🥞", "Борщ 🍲", "Кебаб 🥙", "Картофель фри 🍟"]}
+                    reviewItems={["Приятное место", "Уютно", "Цены - супер"]}
+                />
             </div>
             <div>
-                <Restaurant restaurantName="restaurant 3"/>
-                <Menu menuItems={[
-                    {
-                        "name": "Клаб-сэндвич 🥪"
-                    },
-                    {
-                        "name": "Клубничный торт 🍰"
-                    },
-                    {
-                        "name": "Лобио 🍲"
-                    },
-                    {
-                        "name": "Люля-кебаб"
-                    }
-                ]}/>
-                <Reviews reviewItem={[
-                    {
-                        "text": "Все понравилось!"
-                    },
-                    {
-                        "text": "Близко к метро"
-                    },
-                    {
-                        "text": "Вкусные десерты"
-                    }
-                ]}/>
+                <Restaurant
+                    restaurantName="restaurant 3"
+                    menuItems={[
+                        "Клаб-сэндвич 🥪",
+                        "Клубничный торт 🍰",
+                        "Лобио 🍲",
+                        "Люля-кебаб",
+                    ]}
+                    reviewItems={[
+                        "Все понравилось!",
+                        "Близко к метро",
+                        "Вкусные десерты",
+                    ]}
+                />
             </div>
             <div>
-                <Restaurant restaurantName="restaurant 4"/>
-                <Menu menuItems={[
-                    {
-                        "name": "Морковный суп 🍲"
-                    },
-                    {
-                        "name": "Овсяная каша 🥣"
-                    },
-                    {
-                        "name": "Пюре с зелёным луком 🥔"
-                    },
-                    {
-                        "name": "Пожарские котлеты 🍥"
-                    }
-                ]}/>
-                <Reviews reviewItem={[
-                    {
-                        "text": "Вкусно, как дома"
-                    },
-                    {
-                        "text": "Вкусные завтраки"
-                    },
-                    {
-                        "text": "Быстрое обслуживание"
-                    }
-                ]}/>
+                <Restaurant
+                    restaurantName="restaurant 4"
+                    menuItems={[
+                        "Морковный суп 🍲",
+                        "Овсяная каша 🥣",
+                        "Пюре с зелёным луком 🥔",
+                        "Пожарские котлеты 🍥",
+                    ]}
+                    reviewItems={[
+                        "Вкусно, как дома",
+                        "Вкусные завтраки",
+                        "Быстрое обслуживание",
+                    ]}
+                />
             </div>
         </>
     );
-}
+};

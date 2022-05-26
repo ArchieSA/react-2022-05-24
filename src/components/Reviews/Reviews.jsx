@@ -1,14 +1,12 @@
 import React from 'react';
 
-export const Reviews = ({reviewItem}) => {
+export const Reviews = ({reviewItems}) => {
     return (
         <div>
             <span>Отзывы:</span>
-            {reviewItem.length > 0 &&
             <ul>
-                {reviewItem.map((item) => <li key={item.text}>{item.text}</li>)}
+                {reviewItems.map((item, index) => <li key={index}>{item}</li>)}
             </ul>
-            }
         </div>
     );
 }
