@@ -1,22 +1,16 @@
 import React from 'react';
 import { Restaurant } from "../Restaurant/Restaurant";
 
-export const Restaurants = () => {
-    const restaurantName = 'CarambaRestaurant';
+import styles from './styles.module.css';
+
+export const Restaurants = ({restaurants}) => {
+    console.log(restaurants);
+
     return (
-        <>
+        <div className={styles.root}>
             <div>
-                <Restaurant restaurantName={restaurantName} />
+                <Restaurant restaurant={restaurants[0]} />
             </div>
-            <div>
-                <Restaurant restaurantName="restaurant 2"/>
-            </div>
-            <div>
-                <Restaurant restaurantName="restaurant 3"/>
-            </div>
-            <div>
-                <Restaurant restaurantName="restaurant 4"/>
-            </div>
-        </>
+        </div>
     );
 }

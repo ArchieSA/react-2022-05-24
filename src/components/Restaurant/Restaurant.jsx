@@ -1,7 +1,13 @@
 import React from 'react';
 
-export const Restaurant = ({ restaurantName }) => {
+import styles from'./styles.module.css';
+import {Menu} from "../Menu/Menu";
+
+export const Restaurant = ({ restaurant }) => {
     return (
-        <div>{restaurantName || 'unknown restaurant'}</div>
+        <div className={styles.root}>
+            <h1>{restaurant.name}</h1>
+            <Menu menu={restaurant.menu}/>
+        </div>
     );
 }
