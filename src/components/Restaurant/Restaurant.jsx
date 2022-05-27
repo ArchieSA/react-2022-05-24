@@ -1,7 +1,13 @@
 import React from 'react';
+import { Menu } from "../Menu/Menu";
+import { Reviews } from "../Reviews/Reviews";
 
-export const Restaurant = ({ restaurantName }) => {
+export const Restaurant = ({ restaurantName, dishes, reviews }) => {
     return (
-        <div>{restaurantName || 'unknown restaurant'}</div>
+        <>
+            <h2>{restaurantName || 'unknown restaurant'}</h2>
+            <Menu dishes={dishes || []} />
+            <Reviews reviews={reviews || []}/>
+        </>
     );
 }
