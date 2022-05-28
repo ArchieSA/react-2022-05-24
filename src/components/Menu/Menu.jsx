@@ -1,16 +1,7 @@
-import React from "react";
+import {Product} from "../Product/Product";
 
-export const Menu = ({menu}) => {
-    return(
-        <>
-        <div>
-          <p>Menu</p>
-            <ul>
-                {menu.map(item => {
-                    return <li>{item}</li>
-                })}
-            </ul>
-        </div>
-        </>
-    )
-}
+export const Menu = ({menu}) => (<div>
+    {
+        menu.map((product) => <Product key={product.id} name={product.name}/>)
+    }
+</div>);
