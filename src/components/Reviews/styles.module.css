@@ -1,0 +1,13 @@
+.root {
+    display: flex;
+    align-items: center;
+
+}
+
+.actions {
+    margin: 10px;
+    display: flex;
+    /*align-items: center;*/
+    flex-flow: column wrap;
+}
+
