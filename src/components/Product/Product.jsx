@@ -19,11 +19,11 @@ export const Product = ({name}) => {
         <span>{name}</span>
         <div className={styles.actions}>
             <button onClick={down} className={styles.action}>
-                <img src={ThumbDown} className={styles.icon} loading="lazy"/>
+                <img src={ThumbDown} className={styles.icon} loading="lazy" alt="уменьшить количесво продуктов"/>
             </button>
             <span className={styles.count}>{productCount}</span>
             <button onClick={up} className={styles.action}>
-                <img src={ThumbUp} className={styles.icon} loading="lazy"/>
+                <img src={ThumbUp} className={styles.icon} loading="lazy" alt="увеличеть количесво продуктов"/>
             </button>
         </div>
     </div>)
