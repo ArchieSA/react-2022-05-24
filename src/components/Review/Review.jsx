@@ -4,7 +4,6 @@ import {Rate} from "../Rate/Rate";
 
 
 export const Review = ({review}) =>   {
-    console.log(review)
     return(
         <div>
             <h3>{review.user}</h3>
