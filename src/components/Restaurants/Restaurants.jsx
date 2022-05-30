@@ -10,6 +10,9 @@ export const Restaurants = ({restaurants}) => {
         <div className={styles.root}>
             <div>
                 <Restaurant restaurant={restaurants[0]} />
+                <Restaurant restaurant={restaurants[1]} />
+                <Restaurant restaurant={restaurants[2]} />
+                <Restaurant restaurant={restaurants[3]} />
             </div>
         </div>
     );

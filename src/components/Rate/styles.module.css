@@ -1,0 +1,36 @@
+.root {
+    display: flex;
+    align-items: center;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column
+}
+.active {
+    width: 20px;
+    height: 20px;
+    content: url('./img/star-gold.svg');
+}
+/* .actions {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.count {
+    margin: 0 5px;
+}
+
+.action {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.icon {
+    display: inline;
+    width: 20px;
+    height: 20px;
+}
