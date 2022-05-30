@@ -1,0 +1,7 @@
+.root {
+    display: flex;
+}
+
+.star {
+    max-width: 20px;
+}
