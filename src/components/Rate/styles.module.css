@@ -1,0 +1,8 @@
+.root {
+  display: flex;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+}

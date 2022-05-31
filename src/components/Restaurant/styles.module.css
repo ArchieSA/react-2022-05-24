@@ -1,4 +1,13 @@
 .root {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.rate {
+  margin: 3px 0 0 10px;
 }
