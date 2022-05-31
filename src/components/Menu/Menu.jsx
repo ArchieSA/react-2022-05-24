@@ -1,3 +1,4 @@
+import React from 'react';
 import {Product} from "../Product/Product";
 
 export const Menu = ({menu}) => (<div>
