@@ -5,9 +5,10 @@ import {Menu} from "../Menu/Menu";
 import {Reviews} from "../Reviews/Reviews";
 
 export const Restaurant = ({ restaurant }) => {
-    const restaurantRate = 
-        restaurant.reviews.map(r => r.rating).reduce((sum, r) => sum + r, 0) / 
-        restaurant.reviews.length;
+    const restaurantRate = Math.ceil(
+            restaurant.reviews.map(r => r.rating).reduce((sum, r) => sum + r, 0) / 
+            restaurant.reviews.length
+        );
 
     return (
         <div className={styles.root}>

@@ -7,9 +7,7 @@ export const Rate = ({rate}) => {
     return (
         <div className={styles.stars}>
             {[...Array(5).keys()].map(
-                (_, i) => i < rate 
-                    ? <img key={i} className={styles.star} src={StarGoldImg} />
-                    : <img key={i} className={styles.star} src={StarImg} />
+                (_, i) => <img key={i} className={styles.star} src={i < rate ? StarGoldImg : StarImg} />
             )}
         </div>
     );

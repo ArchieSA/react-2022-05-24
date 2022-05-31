@@ -5,7 +5,7 @@ import ThumbUp from './imgs/thumb-up.svg'
 
 import styles from './styles.module.css';
 
-export const Product = ({product}) => {
+export const Product = ({name}) => {
     let [productCount, setProductCount] = useState(0);
 
     const down = () => {
@@ -16,7 +16,7 @@ export const Product = ({product}) => {
     };
 
     return (<div className={styles.root}>
-        <span>{product.name}</span>
+        <span>{name}</span>
         <div className={styles.actions}>
             <button onClick={down} className={styles.action}>
                 <img src={ThumbDown} className={styles.icon} loading="lazy"/>
