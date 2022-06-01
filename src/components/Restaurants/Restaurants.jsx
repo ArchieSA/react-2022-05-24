@@ -8,8 +8,10 @@ import classnames from 'classnames';
 export const Restaurants = ({ restaurants }) => {
   const [activeRestaurant, setActiveRestaurant] = useState(0);
 
+  const isRestaurantActive = index => index === activeRestaurant;
+
   const setRestaurant = index => {
-    if (index !== activeRestaurant) {
+    if (!isRestaurantActive(index)) {
       setActiveRestaurant(index);
     }
   };
@@ -22,6 +24,7 @@ export const Restaurants = ({ restaurants }) => {
             <Tab
               tabTitle={restaurant.name}
               setActiveTab={() => setRestaurant(index)}
+              isTabActive={isRestaurantActive(index)}
             />
             {index < restaurants.length - 1 && (
               <span className={classnames('tab-delimiter')}>|</span>
