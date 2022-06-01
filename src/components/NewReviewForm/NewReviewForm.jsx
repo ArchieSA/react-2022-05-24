@@ -1,5 +1,6 @@
 import styles from './styles.module.css';
 import { useReducer } from 'react';
+import { RatingWithHoc } from '../Rating/RatingWithHoc';
 
 const actionTypes = {
   changeName: 'changeName',
@@ -24,7 +25,12 @@ export const NewReviewForm = () => {
   const [formState, dispatch] = useReducer(reducer, {
     name: 'Default name',
     text: '',
-    rating: 0,
+    rating: 5,
+  });
+
+  const changeRating = value => dispatch({
+    type: actionTypes.changeRating,
+    payload: value,
   });
 
   return (
@@ -52,7 +58,7 @@ export const NewReviewForm = () => {
         }}
       />
 
-      <span className={styles.title}>Rating</span>
+      {/* <span className={styles.title}>Rating</span>
       <input
         type="number"
         min="0"
@@ -64,7 +70,10 @@ export const NewReviewForm = () => {
             payload: event.target.value,
           });
         }}
-      />
+      /> */}
+
+      <RatingWithHoc className={styles.rating} value={formState.rating} changeRating={changeRating} key={formState.rating} />
+      Rating: {formState.rating}
     </div>
   );
 };

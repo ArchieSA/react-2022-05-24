@@ -15,3 +15,7 @@
 .star:not(:last-child) {
   margin-right: 5px;
 }
+
+.star.clickable {
+  cursor: pointer;
+}
