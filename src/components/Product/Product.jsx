@@ -18,11 +18,11 @@ export const Product = ({name}) => {
         <span>{name}</span>
         <div className={styles.actions}>
             <button onClick={down} className={styles.action}>
-                <img alt ="" src={ThumbDown} className={styles.icon} loading="lazy"/>
+                <img alt ="mark_down" src={ThumbDown} className={styles.icon} loading="lazy"/>
             </button>
             <span className={styles.count}>{productCount}</span>
             <button onClick={up} className={styles.action}>
-                <img alt ="" src={ThumbUp} className={styles.icon} loading="lazy"/>
+                <img alt ="mark_up" src={ThumbUp} className={styles.icon} loading="lazy"/>
             </button>
         </div>
     </div>)
