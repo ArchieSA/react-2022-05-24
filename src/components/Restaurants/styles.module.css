@@ -1,4 +1,12 @@
 .root {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab-delimiter {
+  margin: 0 10px;
 }
