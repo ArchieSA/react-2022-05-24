@@ -1,29 +1,28 @@
-import React, {useEffect, useState} from 'react';
-
-import ThumbDown from './imgs/thumb-down.svg'
-import ThumbUp from './imgs/thumb-up.svg'
+import React, { useState} from 'react';
+import classnames from "classnames";
 
 import styles from './styles.module.css';
 
-export const Product = ({name}) => {
-    let [productCount, setProductCount] = useState(0);
+export const Product = ({name, className}) => {
+    let [count, setCount] = useState(0);
 
-    const down = () => {
-        setProductCount(productCount - 1);
-    };
-    const up = () => {
-        setProductCount(productCount + 1);
-    };
-
-    return (<div className={styles.root}>
+    return (<div className={classnames(styles.root, className)}>
         <span>{name}</span>
         <div className={styles.actions}>
-            <button onClick={down} className={styles.action}>
-                <img src={ThumbDown} className={styles.icon} loading="lazy"/>
+            <button
+                onClick={() => setCount(count - 1)}
+                className={styles.action}
+                disabled={count <= 0}
+            >
+                -
             </button>
-            <span className={styles.count}>{productCount}</span>
-            <button onClick={up} className={styles.action}>
-                <img src={ThumbUp} className={styles.icon} loading="lazy"/>
+            <div className={styles.count}>{count}</div>
+            <button
+                onClick={() => setCount(count + 1)}
+                className={styles.action}
+                disabled={count >= 25}
+            >
+                +
             </button>
         </div>
     </div>)

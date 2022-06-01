@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Restaurants } from "./components/Restaurants/Restaurants";
 import {restaurants} from "./constants/fixtures";
+import {MainPage} from "./pages/Main/MainPage";
+import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-
 root.render(
-    <div id="reactRoot">
-        <Restaurants restaurants={restaurants}/>
-    </div>
+    <MainPage restaurants={restaurants}/>
 );
 
 

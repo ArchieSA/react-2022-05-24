@@ -1,27 +1,42 @@
 .root {
     display: flex;
-    align-items: center;
 }
 
 .actions {
-    margin: 10px;
     display: flex;
     align-items: center;
-}
-
-.count {
-    margin: 0 5px;
+    margin-left: auto;
 }
 
 .action {
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 4px;
+    width: 30px;
+    height: 30px;
+    transition: 0.2s;
 }
 
-.icon {
-    width: 20px;
-    height: 20px;
+.action:first-child {
+     margin-right: 10px;
+ }
+
+.action:last-child {
+     margin-left: 10px;
+ }
+
+
+.action:hover {
+     background-color: rgba(128, 128, 128, 0.1);
+     cursor: pointer;
+ }
+
+.action:disabled {
+     opacity: 0.5;
+ }
+
+.count {
+    width: 19px;
+    text-align: center;
 }
