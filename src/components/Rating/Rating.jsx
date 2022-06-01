@@ -5,15 +5,16 @@ import styles from "./styles.module.css";
 import classnames from "classnames";
 import {MAX_RATING} from "./constants";
 
-export const Rating = ({ value, size = "medium" }) => {
+export const Rating = ({ value, size = "medium", setValue, className }) => {
   return (
-      <div>
+      <div className={classnames(className)}>
         {new Array(MAX_RATING).fill(null).map((_, index) => (
             <img
                 src={index >= value ? Star : GoldStar}
                 key={index}
-                className={classnames(styles.star, styles[size])}
+                className={classnames(styles.star, styles[size], {[styles.clickable]: !!setValue})}
                 loading="lazy"
+                onClick={() => typeof setValue === 'function' && setValue(index + 1)}
             />
         ))}
       </div>

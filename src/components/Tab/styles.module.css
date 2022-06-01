@@ -1,0 +1,15 @@
+.root {
+  display: inline-block;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.root:not(.isTabActive):hover {
+  text-decoration: underline;
+}
+
+.isTabActive {
+  color: #e29300;
+  cursor: default;
+}
