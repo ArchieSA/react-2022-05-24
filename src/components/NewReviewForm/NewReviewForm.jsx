@@ -49,7 +49,6 @@ export const NewReviewForm = () => {
             }} /> */}
 
             <span onClick={(e) => checkRating(e, dispatch)}><Rating value={formState.rating} size="medium" /></span>
-
         </div>
     );
 }
