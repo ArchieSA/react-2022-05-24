@@ -8,7 +8,11 @@ export const Restaurants = ({restaurants}) => {
 
     return (<div className={styles.root}>
         <div>
-            <Restaurant restaurant={restaurants[activeRestaurant]}/>
+        {restaurants.map(({name}, idx) => (
+             <button  onClick={() => setActiveRestaurant((activeRestaurant) => activeRestaurant=idx)} className={styles.restaurant_btn}>{name}</button>
+            ))}
         </div>
+        <Restaurant restaurant={restaurants[activeRestaurant]}/>
     </div>)
 }
+
