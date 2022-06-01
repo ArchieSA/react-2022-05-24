@@ -14,7 +14,7 @@ export const Rating = ({ value, size = "medium", setValue, className }) => {
                 key={index}
                 className={classnames(styles.star, styles[size], {[styles.clickable]: !!setValue})}
                 loading="lazy"
-                onClick={() => setValue(index + 1)}
+                onClick={() => typeof setValue === 'function' && setValue(index + 1)}
             />
         ))}
       </div>
