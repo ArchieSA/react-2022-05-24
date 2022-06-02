@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Star from "./img/star.svg";
 import GoldStar from "./img/star-gold.svg";
 
@@ -36,15 +35,6 @@ export const Rating = ({ value, size = "medium", isInputPossible = false, onClic
   return (
       <div>
         {ratingElements}
-        {/* {new Array(MAX_RATING).fill(null).map((_, index) => (
-            <img
-                src={index >= value ? Star : GoldStar}
-                key={index}
-                className={classnames(styles.star, styles[size])}
-                loading="lazy"
-                // {isInputPossible ? {onClick = {()=>'null'} : {null} }
-            />
-        ))} */}
       </div>
   )
 };
