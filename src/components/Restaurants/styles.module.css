@@ -2,3 +2,35 @@
     display: flex;
     flex-direction: column;
 }
+.button {
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100px;
+    /*height: 48px;*/
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: opacity 200ms ease-in-out, background 200ms ease-in-out,
+    border-color 0.15s ease-in-out;
+    background: #7048e8;
+    border: 1px solid #7048e8;
+    margin-right: 10px;
+}
+.button:active,
+.button:focus {
+    background: #2342c0;
+    border-color: #2342c0;
+}
+.button:hover {
+    background: #5028c6;
+    border-color: #5028c6;
+}
+.buttonGroup {
+    padding: 10px 40px
+}
+.buttonGroup :last-child {
+    margin-right: 0;
+}
