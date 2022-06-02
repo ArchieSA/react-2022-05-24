@@ -4,23 +4,24 @@ import {useReducer} from "react";
 const actionTypes = {
     changeName: 'changeName',
     changeText: 'changeText',
+    changeRating: 'changeRating',
 }
 
 const reducer = (state, action) => {
     switch (action.type) {
         case actionTypes.changeName:
-
-            return { name: action.payload, text: ''};
+            return { name: action.payload, text: '', rating: ''};
         case actionTypes.changeText:
-
             return {...state, text: action.payload };
+        case actionTypes.changeRating:
+            return {...state, rating: action.payload };
         default:
             return state;
     }
 }
 
 export const NewReviewForm = () => {
-    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: ''});
+    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: '', rating: ''});
 
       return (
           <div className={styles.root}>
@@ -33,6 +34,13 @@ export const NewReviewForm = () => {
               <span className={styles.title}>Text</span>
               <input value={formState.text} onChange={(event) => {
                   dispatch({type: actionTypes.changeText, payload: event.target.value});
+              }}/>
+
+              <label htmlFor="input-id-1" className={styles.title}>Rating</label>
+              <input id="input-id-1" value={formState.rating} onChange={(event) => {
+                  if (Number.isInteger(+event.target.value) !== true) event.target.value = '';
+                  else
+                  dispatch({type: actionTypes.changeRating, payload: event.target.value});
               }}/>
           </div>
       );
