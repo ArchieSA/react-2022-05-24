@@ -1,26 +1,32 @@
 import styles from './styles.module.css'
 import {useReducer} from "react";
 
+import { Rating } from '../Rating/Rating';
+
 const actionTypes = {
     changeName: 'changeName',
     changeText: 'changeText',
+    changeRating: 'changeRating',
 }
 
 const reducer = (state, action) => {
     switch (action.type) {
         case actionTypes.changeName:
 
-            return { name: action.payload, text: ''};
+            return { name: action.payload, text: '', rating: 0};
         case actionTypes.changeText:
 
             return {...state, text: action.payload };
+        case actionTypes.changeRating:
+
+            return {...state, rating: action.payload };
         default:
             return state;
     }
 }
 
 export const NewReviewForm = () => {
-    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: ''});
+    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: '', rating: 0});
 
       return (
           <div className={styles.root}>
@@ -34,6 +40,10 @@ export const NewReviewForm = () => {
               <input value={formState.text} onChange={(event) => {
                   dispatch({type: actionTypes.changeText, payload: event.target.value});
               }}/>
+
+              <span className={styles.title}>Rating</span>
+              <Rating value = {formState.rating} isInputPossible = {true} onClick={(numberStar) => {
+                  dispatch({type: actionTypes.changeRating, payload: numberStar})}}/>
           </div>
       );
 }
