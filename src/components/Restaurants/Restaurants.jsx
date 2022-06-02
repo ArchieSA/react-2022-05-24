@@ -8,7 +8,16 @@ export const Restaurants = ({restaurants}) => {
 
     return (<div className={styles.root}>
         <div>
-            <Restaurant restaurant={restaurants[activeRestaurant]}/>
+            <div className={styles.tab_wrapper}>
+                {restaurants.map(({name}, index) => (
+                    <button
+                        key={index}
+                        onClick={()=>setActiveRestaurant(index)}
+                        className={styles.tab_button}
+                    >{name}</button>
+                ))}
+            </div>
+            <Restaurant restaurant={restaurants[activeRestaurant]} />
         </div>
     </div>)
 }

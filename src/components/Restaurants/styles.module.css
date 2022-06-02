@@ -2,3 +2,14 @@
     display: flex;
     flex-direction: column;
 }
+.tab_wrapper {
+    border: 1px solid #ccc;
+}
+.tab_button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
