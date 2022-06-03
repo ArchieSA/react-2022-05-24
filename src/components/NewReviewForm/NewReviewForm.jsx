@@ -1,7 +1,7 @@
 import styles from './styles.module.css'
 import {useReducer} from "react";
 
-import { Rating } from '../Rating/Rating';
+import { InputRating } from '../Hoc/inputRating';
 
 const actionTypes = {
     changeName: 'changeName',
@@ -42,8 +42,9 @@ export const NewReviewForm = () => {
               }}/>
 
               <span className={styles.title}>Rating</span>
-              <Rating value = {formState.rating} isInputPossible = {true} onClick={(numberStar) => {
-                  dispatch({type: actionTypes.changeRating, payload: numberStar})}}/>
+              <InputRating value = {formState.rating} changeRating={(numberStar) => {
+                  dispatch({type: actionTypes.changeRating, payload: numberStar})
+                }}/>
           </div>
       );
 }
