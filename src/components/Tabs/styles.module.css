@@ -1,0 +1,29 @@
+.tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    background-color: #000;
+    border-top: 1px solid #8e8c8c;
+}
+
+
+.item {
+    min-height: 40px;
+    min-width: 90px;
+    margin: 0 15px;
+
+    cursor: pointer;
+    background: transparent;
+    border-color: #f1c40f;
+    border-radius: 0.6em;
+    color: #fff;
+    
+}
+
+.item:hover, .item:focus {
+    background: #f1c40f;
+    color: #000;
+    transition: background 300ms ease-in-out;
+}
