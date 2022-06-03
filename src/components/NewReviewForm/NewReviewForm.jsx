@@ -4,6 +4,7 @@ import {useReducer} from "react";
 const actionTypes = {
     changeName: 'changeName',
     changeText: 'changeText',
+    changeRate: 'changeRate'
 }
 
 const reducer = (state, action) => {
@@ -23,7 +24,7 @@ const reducer = (state, action) => {
 }
 
 export const NewReviewForm = () => {
-    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: '', rate: ''});
+    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: '', rate: '', starsrate: ''});
 
       return (
           <div className={styles.root}>
@@ -39,7 +40,7 @@ export const NewReviewForm = () => {
               }}/>
 
               <span className={styles.title}>Rate</span>
-              <input type="number" min="0" max="5" value={formState.rate} onChange={(event) => {
+              <input value={formState.rate} onChange={(event) => {
                   dispatch({type: actionTypes.changeRate, payload: +event.target.value})
               }} />
           </div>
