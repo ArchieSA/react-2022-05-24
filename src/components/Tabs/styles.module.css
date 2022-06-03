@@ -1,0 +1,17 @@
+.root {
+    text-align: center;
+}
+
+button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+button:hover,
+.active {
+    background-color: #ffd351;
+}
