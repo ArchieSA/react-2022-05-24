@@ -1,5 +1,5 @@
 import styles from './styles.module.css'
-import {useReducer} from "react";
+import {useReducer} from "react"; 
 
 const actionTypes = {
     changeName: 'changeName',
@@ -15,7 +15,7 @@ const reducer = (state, action) => {
             return {...state, text: action.payload };
 
         case actionTypes.changeRate:
-            return { rate: action.payload}
+            return { ...state, rate: action.payload};
 
         default:
             return state;
@@ -23,7 +23,7 @@ const reducer = (state, action) => {
 }
 
 export const NewReviewForm = () => {
-    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: ''});
+    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: '', rate: ''});
 
       return (
           <div className={styles.root}>
@@ -39,7 +39,7 @@ export const NewReviewForm = () => {
               }}/>
 
               <span className={styles.title}>Rate</span>
-              <input value={formState.rate} onChange={(event) => {
+              <input type="number" min="0" max="5" value={formState.rate} onChange={(event) => {
                   dispatch({type: actionTypes.changeRate, payload: +event.target.value})
               }} />
           </div>
