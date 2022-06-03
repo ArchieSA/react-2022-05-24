@@ -42,7 +42,7 @@ export const NewReviewForm = () => {
               }}/>
 
               <span className={styles.title}>Rating</span>
-              <InputRating value = {formState.rating} changeRating={(numberStar) => {
+              <InputRating rating = {formState.rating} changeRating={(numberStar) => {
                   dispatch({type: actionTypes.changeRating, payload: numberStar})
                 }}/>
           </div>

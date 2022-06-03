@@ -1,13 +1,9 @@
-import {Component, useState} from "react";
-
 import { Rating } from "../Rating/Rating";
 
 export function inputRating(WrappedComponent) {
-    const WrapperComponent = ({ value, changeRating, ...props }) => {
-        const [rating, setRating] = useState(0);
+    const WrapperComponent = ({ rating, changeRating, ...props }) => {
 
         const chooseRating = (numberRating) => {
-            setRating(numberRating);
             changeRating(numberRating);
         }
 
