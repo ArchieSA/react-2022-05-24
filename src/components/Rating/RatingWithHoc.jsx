@@ -1,22 +1,19 @@
-import { useState } from 'react';
 import { Rating } from './Rating';
+import styles from './styles-with-hoc.module.css';
 
 function ratingWithHoc(WrappedComponent) {
-  const WrapperComponent = ({ props, className, value, changeRating }) => {
-    const [, setRating] = useState();
-
-    const setValue = ratingValue => {
-      setRating(ratingValue);
-      changeRating(ratingValue);
-    };
+  const WrapperComponent = ({ props, className, value, change }) => {
 
     return (
-      <WrappedComponent
-        {...props}
-        value={value}
-        setValue={setValue}
-        className={className}
-      />
+      <div className={styles.root}>
+        <WrappedComponent
+          {...props}
+          value={value}
+          change={change}
+          className={className}
+        />
+        <span>Rating: {value}</span>
+      </div>
     );
   };
 

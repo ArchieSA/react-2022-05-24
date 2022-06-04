@@ -28,7 +28,7 @@ export const NewReviewForm = () => {
     rating: 5,
   });
 
-  const changeRating = value => dispatch({
+  const change = value => dispatch({
     type: actionTypes.changeRating,
     payload: value,
   });
@@ -72,8 +72,7 @@ export const NewReviewForm = () => {
         }}
       /> */}
 
-      <RatingWithHoc className={styles.rating} value={formState.rating} changeRating={changeRating} />
-      Rating: {formState.rating}
+      <RatingWithHoc className={styles.rating} value={formState.rating} change={change} />
     </div>
   );
 };
