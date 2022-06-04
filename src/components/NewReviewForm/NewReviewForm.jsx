@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
 import { useReducer } from 'react';
-import { RatingWithHoc } from '../Rating/RatingWithHoc';
+import { RatingWithHoc } from '../RatingWithHoc/RatingWithHoc';
 
 const actionTypes = {
   changeName: 'changeName',

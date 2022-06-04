@@ -3,6 +3,7 @@
   border: 0;
   background-color: transparent;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .root:not(.isTabActive):hover {

@@ -1,5 +1,5 @@
-import { Rating } from './Rating';
-import styles from './styles-with-hoc.module.css';
+import { Rating } from '../Rating/Rating';
+import styles from './styles.module.css';
 
 function ratingWithHoc(WrappedComponent) {
   const WrapperComponent = ({ props, className, value, change }) => {
