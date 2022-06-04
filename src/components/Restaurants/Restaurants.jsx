@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Restaurant } from '../Restaurant/Restaurant';
-import { Tab } from '../Tab/Tab';
 
 import styles from './styles.module.css';
-import classnames from 'classnames';
+import { Tabs } from '../Tabs/Tabs';
 
 export const Restaurants = ({ restaurants }) => {
   const [activeRestaurant, setActiveRestaurant] = useState(0);
@@ -18,20 +17,11 @@ export const Restaurants = ({ restaurants }) => {
 
   return (
     <div className={styles.root}>
-      <div className={styles.tabs}>
-        {restaurants.map((restaurant, index) => (
-          <div key={restaurant.id}>
-            <Tab
-              tabTitle={restaurant.name}
-              setActiveTab={() => setRestaurant(index)}
-              isTabActive={isRestaurantActive(index)}
-            />
-            {index < restaurants.length - 1 && (
-              <span className={classnames('tab-delimiter')}>|</span>
-            )}
-          </div>
-        ))}
-      </div>
+      <Tabs
+        tabs={restaurants.map(({ id, name }) => ({ id, name }))}
+        setActiveTab={setRestaurant}
+        isTabActive={isRestaurantActive}
+      />
       <div>
         <Restaurant restaurant={restaurants[activeRestaurant]} />
       </div>

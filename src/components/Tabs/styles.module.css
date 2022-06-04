@@ -1,0 +1,7 @@
+.root {
+  display: flex;
+}
+
+.tab-delimiter {
+  margin: 0 10px;
+}
