@@ -21,7 +21,7 @@ const reducer = (state, action) => {
 }
 
 export const NewReviewForm = () => {
-    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: '', rating: ''});
+    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: '', rating: '0'});
 
       return (
           <div className={styles.root}>
@@ -38,9 +38,12 @@ export const NewReviewForm = () => {
 
               <label htmlFor="input-id-1" className={styles.title}>Rating</label>
               <input id="input-id-1" value={formState.rating} onChange={(event) => {
-                  if (Number.isInteger(+event.target.value) !== true) event.target.value = '';
-                  else
-                  dispatch({type: actionTypes.changeRating, payload: event.target.value});
+                  if (Number.isInteger(+event.target.value) !== true || +event.target.value > 5) {
+                      event.target.value = '';
+                  }
+                  else {
+                      dispatch({type: actionTypes.changeRating, payload: event.target.value});
+                  }
               }}/>
           </div>
       );
