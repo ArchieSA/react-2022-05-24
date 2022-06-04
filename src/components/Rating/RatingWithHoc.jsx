@@ -3,7 +3,7 @@ import { Rating } from './Rating';
 
 function ratingWithHoc(WrappedComponent) {
   const WrapperComponent = ({ props, className, value, changeRating }) => {
-    const [rating, setRating] = useState(value);
+    const [, setRating] = useState();
 
     const setValue = ratingValue => {
       setRating(ratingValue);
@@ -13,7 +13,7 @@ function ratingWithHoc(WrappedComponent) {
     return (
       <WrappedComponent
         {...props}
-        value={rating}
+        value={value}
         setValue={setValue}
         className={className}
       />

@@ -72,7 +72,7 @@ export const NewReviewForm = () => {
         }}
       /> */}
 
-      <RatingWithHoc className={styles.rating} value={formState.rating} changeRating={changeRating} key={formState.rating} />
+      <RatingWithHoc className={styles.rating} value={formState.rating} changeRating={changeRating} />
       Rating: {formState.rating}
     </div>
   );
