@@ -21,7 +21,7 @@ const reducer = (state, action) => {
 }
 
 export const NewReviewForm = () => {
-    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: '', rating: '0'});
+    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: '', rating: 0});
 
       return (
           <div className={styles.root}>

@@ -1,3 +1,4 @@
+import React from "react";
 import { Restaurants } from "../../components/Restaurants/Restaurants";
 import {Header} from "../../components/Header/Header";
 import {restaurants} from "../../constants/fixtures";
