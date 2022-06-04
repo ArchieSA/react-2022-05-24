@@ -9,18 +9,3 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <MainPage restaurants={restaurants}/>
 );
-
-
-// React.createElement('div', {
-//     children: [
-//         React.createElement('span', {
-//             children: 'Hello!'
-//         }),
-//         React.createElement('div', {
-//             children: [
-//                 React.createElement('span', {children: 'World!'}),
-//                 React.createElement('span', {children: 'Caramba!'})
-//             ]
-//         }),
-//     ],
-// })
