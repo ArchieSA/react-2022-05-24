@@ -1,7 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import {Rating} from "../Rating/Rating";
-
+import { RatingStatic } from "../Rating/RatingStatic/RatingStatic";
 
 import styles from "./styles.module.css";
 
@@ -10,7 +9,7 @@ const Review = ({ user, text, rating, className }) => {
     <div className={classnames(className, styles.root)}>
       <div className={styles.header}>
         <span className={styles.user}>{user}</span>
-        <Rating value={rating} size="small" />
+        <RatingStatic value={rating} size="small" />
       </div>
       <span>{text}</span>
     </div>

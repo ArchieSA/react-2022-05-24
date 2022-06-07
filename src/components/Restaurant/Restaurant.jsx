@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import styles from'./styles.module.css';
 import {MemoMenu, Menu} from "../Menu/Menu";
-import {Rating} from "../Rating/Rating";
+import { RatingStatic } from '../Rating/RatingStatic/RatingStatic';
 import {Reviews} from "../Reviews/component";
 
 export const Restaurant = ({ restaurant }) => {
@@ -15,7 +15,7 @@ export const Restaurant = ({ restaurant }) => {
         <div className={styles.root}>
             <div className={styles.mainInfo}>
                 <span className={styles.restaurantName}>{restaurant.name}</span>
-                <Rating value={restaurantRate} />
+                <RatingStatic value={restaurantRate} />
             </div>
             <div className={styles.detailedInfo}>
                 <MemoMenu
