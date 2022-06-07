@@ -4,23 +4,28 @@ import {useReducer} from "react";
 const actionTypes = {
     changeName: 'changeName',
     changeText: 'changeText',
+    changeRating: 'changeRating',
 }
+
+const DEFAULT_STATE = {name: 'Default name', text: '', rating: 0};
 
 const reducer = (state, action) => {
     switch (action.type) {
         case actionTypes.changeName:
+            return { ...DEFAULT_STATE, name: action.payload};
 
-            return { name: action.payload, text: ''};
         case actionTypes.changeText:
-
             return {...state, text: action.payload };
+
+        case actionTypes.changeRating:
+            return {...state, rating: action.payload };
         default:
             return state;
     }
 }
 
 export const NewReviewForm = () => {
-    const [formState, dispatch] = useReducer(reducer, {name: 'Default name', text: ''});
+    const [formState, dispatch] = useReducer(reducer, DEFAULT_STATE);
 
       return (
           <div className={styles.root}>
@@ -33,6 +38,11 @@ export const NewReviewForm = () => {
               <span className={styles.title}>Text</span>
               <input value={formState.text} onChange={(event) => {
                   dispatch({type: actionTypes.changeText, payload: event.target.value});
+              }}/>
+
+              <span className={styles.title}>Rating</span>
+              <input value={formState.rating} type="number" max="5" min="0" onChange={(event) => {
+                  dispatch({type: actionTypes.changeRating, payload: Number(event.target.value)});
               }}/>
           </div>
       );
