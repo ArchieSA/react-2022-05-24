@@ -22,7 +22,7 @@ class Store {
     }
 
     dispatch(action) {
-        this.makeAction(action)
+        this.makeAction(action);
 
         Object.values(this.subscribers).forEach((subscriber) => {
             typeof subscriber === 'function' && subscriber(this.state);
