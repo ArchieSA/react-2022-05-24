@@ -4,8 +4,9 @@ import { Restaurant } from "../Restaurant/Restaurant";
 import { Tabs } from "../Tabs/Tabs";
 
 import styles from "./styles.module.css";
-import Basket from "../Basket/Basket";
+import Cart from "../Cart/Cart";
 import RestaurantContainer from "../../containers/Restaurant/Restaurant";
+import CartContainer from "../../containers/Cart/Cart";
 
 export const Restaurants = ({ restaurantIds }) => {
   const [currentRestaurantId, setCurrentRestaurantId] = useState(
@@ -25,7 +26,8 @@ export const Restaurants = ({ restaurantIds }) => {
         {/*    onTabSelect={setCurrentRestaurantId}*/}
         {/*/>*/}
         <RestaurantContainer restaurantId={currentRestaurantId} />
-        {/*<Basket className={styles.basket}/>*/}
+        {/*<Cart className={styles.cart}/>*/}
+        <CartContainer className={styles.cart} />
       </div>
     </div>
   );

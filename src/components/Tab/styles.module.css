@@ -3,24 +3,22 @@
   background: inherit;
   font-size: 18px;
   padding: 10px;
-
 }
 
 .root.selected {
-   border-bottom: 1px solid black;
-   padding-bottom: 9px;
- }
+  border-bottom: 1px solid black;
+  padding-bottom: 9px;
+}
 
 .root:hover {
-   border-bottom: 2px solid black;
-   padding-bottom: 8px;
-   cursor: pointer;
- }
-
+  border-bottom: 2px solid black;
+  padding-bottom: 8px;
+  cursor: pointer;
+}
 
 .dark {
-    color: white;
+  color: white;
 }
 .light {
-    color: black;
+  color: black;
 }

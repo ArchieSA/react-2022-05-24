@@ -1,19 +1,21 @@
-import {Component, useState} from "react";
+import { Component, useState } from "react";
 
 export function withHoc(WrappedComponent) {
-    const WrapperComponent = ({ date, ...props }) => {
-        const [state] = useState();
+  const WrapperComponent = ({ date, ...props }) => {
+    const [state] = useState();
 
-        if (date > new Date()) {
-            return <span></span>
-        }
-
-        return <WrappedComponent {...props} date={date}/>;
+    if (date > new Date()) {
+      return <span></span>;
     }
 
-    WrapperComponent.displayName = `Wrapper${WrappedComponent.displayName || WrappedComponent.name || 'Component'}`;
+    return <WrappedComponent {...props} date={date} />;
+  };
 
-    return WrapperComponent;
+  WrapperComponent.displayName = `Wrapper${
+    WrappedComponent.displayName || WrappedComponent.name || "Component"
+  }`;
+
+  return WrapperComponent;
 }
 
 // export function withHoc(WrappedComponent) {
@@ -28,13 +30,12 @@ export function withHoc(WrappedComponent) {
 //     return WrapperComponent;
 // }
 
+const DateComponent = (date, className) => <span>{date}</span>;
 
-const DateComponent = (date, className) => <span>{date}</span>
+const EnFormatDateComponent = (date) => <span>{date}</span>;
 
-const EnFormatDateComponent = (date) => <span>{date}</span>
-
-const RusFormatDateComponent = (date) => <span>{date}</span>
+const RusFormatDateComponent = (date) => <span>{date}</span>;
 
 const TodayDateComponent = withHoc(DateComponent);
-const TodayEnFormatDateComponent  = withHoc(EnFormatDateComponent);
+const TodayEnFormatDateComponent = withHoc(EnFormatDateComponent);
 const TodayRusFormatDateComponent = withHoc(RusFormatDateComponent);

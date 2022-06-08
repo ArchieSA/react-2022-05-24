@@ -152,7 +152,8 @@ export const normalizedReviews = [
   {
     id: "5db6247b-ab1c-49db-be1f-8dd27fd38b81",
     userId: "dfb982e9-b432-4b7d-aec6-7f6ff2e6af54",
-    text: "Finally! This place is amazing place for breakfast, lunch, dinner and supper",
+    text:
+      "Finally! This place is amazing place for breakfast, lunch, dinner and supper",
     rating: 5,
   },
   {
