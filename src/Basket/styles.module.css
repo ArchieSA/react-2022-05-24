@@ -1,0 +1,13 @@
+.root {
+   width: 400px;
+   height: 400px;
+   border: 1px solid grey;
+   border-radius: 20px;
+   padding: 20px;
+   box-sizing: border-box;
+}
+
+.product {
+   display: flex;
+   justify-content: space-between;
+}

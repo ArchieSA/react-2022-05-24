@@ -1,6 +1,6 @@
 .root {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     background-color: black;
 }
 

@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import styles from'./styles.module.css';
-import {MemoMenu, Menu} from "../Menu/Menu";
-import {Rating} from "../Rating/Rating";
-import {Reviews} from "../Reviews/component";
+import styles from './styles.module.css';
+import { MemoMenu, Menu } from "../Menu/Menu";
+import { Rating } from "../Rating/Rating";
+import { Reviews } from "../Reviews/component";
 
 export const Restaurant = ({ restaurant }) => {
     const restaurantRate = Math.ceil(

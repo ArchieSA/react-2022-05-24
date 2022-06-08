@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Basket from '../../Basket/Basket';
 import { ButtonRestaurant } from '../ButtonRestaurant/ButtonRestaurant';
 import { Restaurant } from "../Restaurant/Restaurant";
 
@@ -11,6 +12,7 @@ export const Restaurants = ({ restaurants }) => {
         <div>
             <ButtonRestaurant restaurants = {restaurants} setActiveRestaurant={setActiveRestaurant}/>
             <Restaurant restaurant={restaurants[activeRestaurant]} />
+            <Basket className={styles.basket}/>
         </div>
     </div>)
 }
