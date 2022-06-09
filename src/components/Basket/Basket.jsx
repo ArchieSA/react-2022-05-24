@@ -1,24 +1,23 @@
 import React from "react";
 import styles from "./styles.module.css";
 import classnames from "classnames";
-import { selectBasket } from "../../store/basket/selectors";
-import { useSelector } from "react-redux";
+import { BasketProductContainer } from "../../containers/BasketProduct/BasketProduct"
 
-const Basket = ({ className }) => {
-  const selectedProducts = useSelector(selectBasket);
+
+export const Basket = ({ className, productIds }) => {
+
+ const product =  productIds.map( (productId) => {
+    return <BasketProductContainer key={productId} productId={productId}/>
+ })
 
   return (
     <div className={classnames(styles.root, className)}>
+      
       <h2>Basket</h2>
-      {selectedProducts &&
-        Object.keys(selectedProducts).map((productKey) => (
-          <div key={productKey} className={styles.product}>
-            <span>{productKey}</span>
-            <span>{selectedProducts[productKey]}</span>
-          </div>
-        ))}
+      <div  className={styles.product} >
+        <div>{product}</div>
+        </div>
     </div>
   );
 };
 
-export default Basket;

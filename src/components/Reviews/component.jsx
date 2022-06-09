@@ -1,20 +1,13 @@
 import React from "react";
-import {MemoReview} from "../Review/component";
-import {NewReviewForm} from "../NewReviewForm/NewReviewForm";
+import { ReviewContainer } from "../../containers/Review/Review"
 
 export const Reviews = ({ reviews }) => {
   return (
       <div>
         {reviews.length &&
             reviews.map((review) => (
-                <MemoReview
-                    key={review.id}
-                    user={review.user}
-                    text={review.text}
-                    rating={review.rating}
-                />
+            <ReviewContainer key ={review} reviewId = {review}/>
             ))}
-          <NewReviewForm/>
       </div>
   )
 };
