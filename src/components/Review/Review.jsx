@@ -4,12 +4,13 @@ import {Rating} from "../Rating/Rating";
 
 
 import styles from "./styles.module.css";
+import { UsersContainer } from "../../containers/Users/UsersContainer";
 
-const Review = ({ user, text, rating, className }) => {
+export const Review = ({ userId, text, rating, className }) => {
   return (
     <div className={classnames(className, styles.root)}>
       <div className={styles.header}>
-        <span className={styles.user}>{user}</span>
+        <span className={styles.user}><UsersContainer userId = {userId}/></span>
         <Rating value={rating} size="small" />
       </div>
       <span>{text}</span>
@@ -18,4 +19,4 @@ const Review = ({ user, text, rating, className }) => {
 };
 
 
-export const MemoReview = React.memo(Review);
+

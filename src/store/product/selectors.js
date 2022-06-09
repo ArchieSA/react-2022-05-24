@@ -6,3 +6,4 @@ export const selectProductById = (state, id) =>
 
 export const selectProductNameById = (state, id) =>
   selectProductState(state).entities[id]?.name;
+

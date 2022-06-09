@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import styles from "./styles.module.css";
 import { Rating } from "../Rating/Rating";
-import { Reviews } from "../Reviews/component";
+import { Reviews } from "../Reviews/Reviews";
 import Menu from "../Menu/Menu";
 
 export const Restaurant = ({ restaurant }) => {
@@ -19,9 +19,12 @@ export const Restaurant = ({ restaurant }) => {
       </div>
       <div className={styles.detailedInfo}>
         <Menu productIds={restaurant.menu} className={styles.menu} />
-        {/*<div className={styles.reviews}>*/}
-        {/*    <Reviews reviews={restaurant.reviews} />*/}
-        {/*</div>*/}
+        
+        <div className={styles.reviews}>
+           <Reviews
+            reviews={restaurant.reviews}
+             />
+        </div>
       </div>
     </div>
   );
