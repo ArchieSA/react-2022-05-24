@@ -4,7 +4,7 @@ import { Restaurant } from "../Restaurant/Restaurant";
 import { Tabs } from "../Tabs/Tabs";
 
 import styles from "./styles.module.css";
-import Basket from "../Basket/Basket";
+import BasketContainer from "../../containers/Basket/Basket";
 import RestaurantContainer from "../../containers/Restaurant/Restaurant";
 
 export const Restaurants = ({ restaurantIds }) => {
@@ -25,7 +25,7 @@ export const Restaurants = ({ restaurantIds }) => {
         {/*    onTabSelect={setCurrentRestaurantId}*/}
         {/*/>*/}
         <RestaurantContainer restaurantId={currentRestaurantId} />
-        {/*<Basket className={styles.basket}/>*/}
+        <BasketContainer className={styles.basket}/>
       </div>
     </div>
   );
