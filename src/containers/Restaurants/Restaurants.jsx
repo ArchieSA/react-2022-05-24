@@ -4,6 +4,7 @@ import { selectRestaurantIds } from "../../store/restaurant/selectors";
 
 const RestaurantsContainer = () => {
   const restaurantIds = useSelector(selectRestaurantIds);
+  // console.log(restaurantIds)
 
   return <Restaurants restaurantIds={restaurantIds} />;
 };
