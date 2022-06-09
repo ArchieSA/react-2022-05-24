@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-
-import { Restaurant } from "../Restaurant/Restaurant";
 import { Tabs } from "../Tabs/Tabs";
-
 import styles from "./styles.module.css";
-import Basket from "../Basket/Basket";
 import RestaurantContainer from "../../containers/Restaurant/Restaurant";
+import BasketContainer from "../../containers/Basket/Basket";
 
 export const Restaurants = ({ restaurantIds }) => {
   const [currentRestaurantId, setCurrentRestaurantId] = useState(
@@ -25,7 +22,7 @@ export const Restaurants = ({ restaurantIds }) => {
         {/*    onTabSelect={setCurrentRestaurantId}*/}
         {/*/>*/}
         <RestaurantContainer restaurantId={currentRestaurantId} />
-        {/*<Basket className={styles.basket}/>*/}
+        <BasketContainer className={styles.basket} />
       </div>
     </div>
   );
