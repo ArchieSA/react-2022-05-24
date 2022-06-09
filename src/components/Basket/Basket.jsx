@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { selectBasket } from "../../store/basket/selectors";
 import { useSelector } from "react-redux";
 
-const Basket = ({ className }) => {
+export const Basket = ({ className }) => {
   const selectedProducts = useSelector(selectBasket);
 
   return (
@@ -21,4 +21,4 @@ const Basket = ({ className }) => {
   );
 };
 
-export default Basket;
+// export default Basket;

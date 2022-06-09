@@ -1,6 +1,7 @@
 import {ADD_PRODUCT, REMOVE_PRODUCT} from "./actions";
 
 const basketReducer = (state = {}, action = {}) => {
+    console.log(state);
     switch (action.type) {
         case ADD_PRODUCT:
             return {...state, [action.payload]: (state[action.payload] || 0) + 1 };
