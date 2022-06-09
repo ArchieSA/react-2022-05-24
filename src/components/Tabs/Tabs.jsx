@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import styles from './styles.module.css';
 
 export const Tabs = ({restaurants, onClick, activeRestaurant}) => {
+
+
     return(
     <div className={styles.root}>
     <h1>Restaurants</h1>
