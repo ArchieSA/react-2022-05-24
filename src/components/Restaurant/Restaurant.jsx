@@ -22,6 +22,7 @@ export const Restaurant = ({ restaurant }) => {
         {/*<div className={styles.reviews}>*/}
         {/*    <Reviews reviews={restaurant.reviews} />*/}
         {/*</div>*/}
+        <Reviews reviewIds={restaurant.reviews} className={styles.reviews} />
       </div>
     </div>
   );

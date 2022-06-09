@@ -1,21 +1,19 @@
 import React from "react";
 import styles from "./styles.module.css";
 import classnames from "classnames";
-import { selectBasket } from "../../store/basket/selectors";
-import { useSelector } from "react-redux";
+import BasketProduct from "../../containers/BasketProduct/BasketProduct";
 
-const Basket = ({ className }) => {
-  const selectedProducts = useSelector(selectBasket);
-
+const Basket = ({ selectedProducts, className }) => {
   return (
     <div className={classnames(styles.root, className)}>
       <h2>Basket</h2>
       {selectedProducts &&
         Object.keys(selectedProducts).map((productKey) => (
-          <div key={productKey} className={styles.product}>
-            <span>{productKey}</span>
-            <span>{selectedProducts[productKey]}</span>
-          </div>
+          <BasketProduct
+            key={productKey}
+            selectedProductId={productKey}
+            className={styles.product}
+          />
         ))}
     </div>
   );
