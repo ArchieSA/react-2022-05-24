@@ -8,10 +8,7 @@ export const Reviews = ({ reviewsIds }) => {
         {reviewsIds.length &&
             reviewsIds.map((reviewId) => (
                 <ReviewContainer
-                    key={reviewId}
-                    user={reviewId}
-                    text={reviewId}
-                    rating={reviewId}
+                    reviewId={reviewId}
                 />
             ))}
           <NewReviewForm/>

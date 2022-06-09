@@ -1,13 +1,23 @@
 import { useSelector } from "react-redux";
-import { selectReviewNameById } from "../../store/review/selectors";
+import { selectReviewTextById, selectReviewUserId, selectReviewRating} from "../../store/review/selectors";
 import { MemoReview } from "../../components/Review/component"; 
 
-const ReviewContainer = ({reviewId}) => {
+const ReviewContainer = ({reviewId, className}) => {
+ 
     const reviewText = useSelector((state) => 
-        selectReviewNameById(state, reviewId)
+        selectReviewTextById(state, reviewId)
+    );
+
+    const reviewUserId = useSelector((state) =>
+        selectReviewUserId(state, reviewId)
     )
 
-    return <MemoReview text={reviewText}/>
+    const reviewRating = useSelector((state) => 
+        selectReviewRating(state, reviewId)
+    );
+
+
+    return <MemoReview text={reviewText} user={reviewUserId} rating={reviewRating}/>
 }
 
 export default ReviewContainer
