@@ -13,9 +13,7 @@ const BasketProductContainer = ({productId}) => {
     );
     console.log(productCount);
     return (
-        <div>
             <BasketProduct name={productName} productCount={productCount} />
-        </div>
     );
 };
 

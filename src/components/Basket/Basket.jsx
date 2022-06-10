@@ -18,7 +18,7 @@ const Basket = ({ className, productIds }) => {
         {
             productIds.length > 0 && productIds.map(
                 (productId) =>
-                    <div>{productId}
+                    <div key={productId}>
                         <BasketProductContainer productId={productId}/>
                     </div>
             )
