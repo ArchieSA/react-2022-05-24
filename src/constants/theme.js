@@ -1,4 +1,4 @@
 export const THEMES = {
-    Dark: 'dark',
-    Light: 'light',
-}
+  Dark: "dark",
+  Light: "light",
+};

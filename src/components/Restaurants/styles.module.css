@@ -1,8 +1,8 @@
 .root {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.basket {
-    margin: 10px 40px;
+.cart {
+  margin: 10px 40px;
 }

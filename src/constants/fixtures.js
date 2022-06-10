@@ -128,7 +128,8 @@ export const restaurants = [
       {
         id: "5db6247b-ab1c-49db-be1f-8dd27fd38b81",
         user: "Sam",
-        text: "Finally! This place is amazing place for breakfast, lunch, dinner and supper",
+        text:
+          "Finally! This place is amazing place for breakfast, lunch, dinner and supper",
         rating: 5,
       },
       {
