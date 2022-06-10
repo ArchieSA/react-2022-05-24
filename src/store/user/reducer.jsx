@@ -8,11 +8,11 @@ const initialState = {
     ids: [normalizedUsers.map((user) => user.id)],
 };
 
-const userReducer = (state = initialState, action) =>{
+const userReducer = (state = initialState, action) => {
     switch (action.type) {
         default:
-            state;
+            return state;
     }
-} 
+}
 
 export default userReducer;
