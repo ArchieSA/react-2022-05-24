@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./styles.module.css";
 import classnames from "classnames";
-import { selectBasket } from "../../store/basket/selectors";
-import { useSelector } from "react-redux";
-import BasketProductContainer from "../BasketProductContainer/BasketProductContainer ";
+
+import BasketProductContainer from "../BasketProductContainer/BasketProductContainer";
 
 const Basket = ({ className, productId }) => {
   // const selectedProducts = useSelector(selectBasket);
