@@ -1,14 +1,12 @@
 import React from "react";
-import { Basket } from "../../components/Basket/Basket";
+import Basket from "../../components/Basket/Basket";
 import { useSelector } from "react-redux";
-import {selectProductNameById} from "../../store/product/selectors";
+import { selectBasket } from "../../store/basket/selectors";
 
-const BasketContainer = (productId) => {
-    const productName = useSelector((state) =>
-        selectProductNameById(state, productId)
-    );
+const BasketContainer = () => {
+  const productId = useSelector(selectBasket);
 
-    return <Basket productName={productName} />;
+  return <Basket productId={productId} />;
 };
 
 export default BasketContainer;
