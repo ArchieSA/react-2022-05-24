@@ -3,19 +3,19 @@ import styles from "./styles.module.css";
 import classnames from "classnames";
 import CartProduct from "../../containers/CartProduct/CartProduct";
 
-const Cart = ({ selectedProducts, className }) => {
+const Cart = ({ selectedProductIds, className }) => {
   return (
     <div className={classnames(styles.root, className)}>
       <h2>Cart</h2>
-      {selectedProducts &&
-        Object.keys(selectedProducts).map((productKey) => (
+      {selectedProductIds &&
+        selectedProductIds.map((productId) => (
           // <div key={productKey} className={styles.product}>
           //   <span>{productKey}</span>
           //   <span>{selectedProducts[productKey]}</span>
           // </div>
           <CartProduct
-            key={productKey}
-            selectedProductId={productKey}
+            key={productId}
+            selectedProductId={productId}
             className={styles.product}
           />
         ))}

@@ -1,13 +1,13 @@
 import React from "react";
-import { selectCart } from "../../store/cart/selectors";
+import { selectCartProductIds } from "../../store/cart/selectors";
 import { useSelector } from "react-redux";
 
 import Cart from "../../components/Cart/Cart";
 
 const CartContainer = ({ className }) => {
-  const selectedProducts = useSelector(selectCart);
+  const selectedProductIds = useSelector(selectCartProductIds);
 
-  return <Cart selectedProducts={selectedProducts} className={className} />;
+  return <Cart selectedProductIds={selectedProductIds} className={className} />;
 };
 
 export default CartContainer;
