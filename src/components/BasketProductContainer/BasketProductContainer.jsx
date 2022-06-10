@@ -4,7 +4,7 @@ import { selectProductNameById } from "../../store/product/selectors";
 import { selectProductCountFromBasket } from "../../store/basket/selectors";
 import BasketProduct from "../BasketProduct/BasketProduct";
 
-const BasketProductContainer = (productKey, productId) => {
+const BasketProductContainer = ({productId}) => {
     const productName = useSelector((state) =>
         selectProductNameById(state, productId)
     );
@@ -13,7 +13,7 @@ const BasketProductContainer = (productKey, productId) => {
     );
     console.log(productCount);
     return (
-        <div key={productKey}>
+        <div>
             <BasketProduct name={productName} productCount={productCount} />
         </div>
     );
