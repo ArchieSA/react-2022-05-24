@@ -3,13 +3,12 @@ import styles from "./styles.module.css";
 import classnames from "classnames";
 import BasketProductContainer from "../../containers/BasketProduct/BasketProduct";
 
-const Basket = ({ products, className }) => {
+const Basket = ({ productIds, className }) => {
   return (
     <div className={classnames(styles.root, className)}>
       <h2 className={classnames(styles.header)}>Корзина</h2>
       {
-        products &&
-        Object.keys(products).map((productKey) => (
+        productIds && productIds.map((productKey) => (
           <BasketProductContainer productId={productKey} />
         ))
       }
