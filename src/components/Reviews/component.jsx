@@ -1,20 +1,20 @@
 import React from "react";
-import {MemoReview} from "../Review/component";
 import {NewReviewForm} from "../NewReviewForm/NewReviewForm";
+import ReviewContainer from "../../containers/Review/Review";
+import styles from './styles.module.css'
+import classNames from "classnames";
 
-export const Reviews = ({ reviews }) => {
+export const Reviews = ({ className, reviewIds }) => {
   return (
-      <div>
-        {reviews.length &&
-            reviews.map((review) => (
-                <MemoReview
-                    key={review.id}
-                    user={review.user}
-                    text={review.text}
-                    rating={review.rating}
-                />
-            ))}
-          <NewReviewForm/>
-      </div>
+    <div className={classNames(className, styles.root)}>
+      <h3>Reviews</h3>
+
+      {reviewIds.map(reviewId => 
+        <ReviewContainer key={reviewId} reviewId={reviewId} />
+      )}
+
+      <h3>New Review</h3>
+      <NewReviewForm/>
+    </div>
   )
 };

@@ -9,7 +9,7 @@ class Store {
         this.reducers = reducers;
         this.makeAction();
 
-        console.log('init state', JSON.stringify(this.state));
+        //console.log('init state', JSON.stringify(this.state));
     }
 
     subscribe(key, callback) {
@@ -28,7 +28,7 @@ class Store {
             typeof subscriber === 'function' && subscriber(this.state);
         });
 
-        console.log(`state after dispatch ${action?.type || 'empty'}`, JSON.stringify(this.state));
+        //console.log(`state after dispatch ${action?.type || 'empty'}`, JSON.stringify(this.state));
     }
 
     makeAction(action) {

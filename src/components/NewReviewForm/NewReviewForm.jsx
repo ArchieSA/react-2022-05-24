@@ -1,3 +1,4 @@
+import React from "react";
 import styles from './styles.module.css'
 import {useReducer} from "react";
 
@@ -29,7 +30,6 @@ export const NewReviewForm = () => {
 
       return (
           <div className={styles.root}>
-              <h3>New Review</h3>
               <span className={styles.title}>Name</span>
               <input value={formState.name} onChange={(event) => {
                   dispatch({type: actionTypes.changeName, payload: event.target.value});

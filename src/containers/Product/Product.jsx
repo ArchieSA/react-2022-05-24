@@ -6,13 +6,9 @@ import { selectProductCountFromBasket } from "../../store/basket/selectors";
 import { addProduct, removeProduct } from "../../store/basket/actions";
 
 const ProductContainer = ({ productId, className }) => {
-  const productName = useSelector((state) =>
-    selectProductNameById(state, productId)
-  );
+  const productName = useSelector((state) => selectProductNameById(state, productId));
+  const productCount = useSelector((state) => selectProductCountFromBasket(state, productId));
   const dispatch = useDispatch();
-  const productCount = useSelector((state) =>
-    selectProductCountFromBasket(state, productId)
-  );
 
   const onRemoveProduct = useCallback(
     () => dispatch(removeProduct(productId)),
