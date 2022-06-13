@@ -2,7 +2,7 @@ import { selectReviewByIds } from "../review/selectors";
 import { createSelector } from "reselect";
 
 export const selectRestaurantState = (state) => state.restaurant;
-
+export const selectRestaurants = (state) => Object.values(selectRestaurantState(state).entities);
 export const selectRestaurantIds = (state) => selectRestaurantState(state).ids;
 export const selectRestaurantById = (state, id) =>
   selectRestaurantState(state).entities[id];

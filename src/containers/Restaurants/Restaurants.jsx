@@ -1,11 +1,11 @@
 import { Restaurants } from "../../components/Restaurants/Restaurants";
 import { useSelector } from "react-redux";
-import { selectRestaurantIds } from "../../store/restaurant/selectors";
+import { selectRestaurants } from "../../store/restaurant/selectors";
 
 const RestaurantsContainer = () => {
-  const restaurantIds = useSelector(selectRestaurantIds);
+  const restaurants = useSelector(selectRestaurants);
 
-  return <Restaurants restaurantIds={restaurantIds} />;
+  return <Restaurants restaurants={restaurants} />;
 };
 
 export default RestaurantsContainer;
