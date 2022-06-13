@@ -1,16 +1,15 @@
-import React, { useState } from "react";
-
-import { Restaurant } from "../Restaurant/Restaurant";
-import { Tabs } from "../Tabs/Tabs";
+import React from "react";
 
 import styles from "./styles.module.css";
 import RestaurantContainer from "../../containers/Restaurant/Restaurant";
 import BasketContainer from "../../containers/Basket/Basket";
+import TabsContainer from "../../containers/Tabs/Tabs";
+import { useSelector } from "react-redux";
+import { selectCurrentTabId } from "../../store/tabs/selectors";
 
 export const Restaurants = ({ restaurantIds }) => {
-  const [currentRestaurantId, setCurrentRestaurantId] = useState(
-    restaurantIds[0]
-  );
+
+  const currentRestaurantId = useSelector(selectCurrentTabId);
 
   if (!restaurantIds?.length) {
     return null;
@@ -19,13 +18,9 @@ export const Restaurants = ({ restaurantIds }) => {
   return (
     <div className={styles.root}>
       <div>
-        {/*<Tabs*/}
-        {/*    tabs={restaurants.map(({ name, id }) => ({ label: name, id }))}*/}
-        {/*    selectedId={currentRestaurantId}*/}
-        {/*    onTabSelect={setCurrentRestaurantId}*/}
-        {/*/>*/}
-        <RestaurantContainer restaurantId={currentRestaurantId} />
-        <BasketContainer className={styles.basket} />
+          <TabsContainer />
+          <RestaurantContainer restaurantId={currentRestaurantId} />
+          <BasketContainer className={styles.basket} />
       </div>
     </div>
   );
