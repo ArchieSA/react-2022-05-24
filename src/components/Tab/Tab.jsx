@@ -6,8 +6,9 @@ import styles from './styles.module.css';
 import {ThemeContext} from "../../contexts/ThemeContext/ThemeContext";
 import {THEMES} from "../../constants/theme";
 
-export const Tab = ({ label, onTabSelect, isSelected, className }) => {
+const Tab = ({ label, onTabSelect, isSelected, className }) => {
     const {theme} = useContext(ThemeContext);
+    
     return (
         <button
             className={classnames(styles.root, className, {
@@ -28,3 +29,5 @@ Tab.propTypes = {
     isSelected: PropTypes.bool,
     className: PropTypes.string,
 }
+
+export default Tab;
