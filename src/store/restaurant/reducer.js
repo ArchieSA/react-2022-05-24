@@ -3,7 +3,7 @@ import { normalizedRestaurants } from "../../constants/normalized-fixtures";
 const initialState = {
   entities: normalizedRestaurants.reduce((acc, restaurant) => {
     acc[restaurant.id] = restaurant;
-
+    // console.log(acc[restaurant.id]);
     return acc;
   }, {}),
   ids: normalizedRestaurants.map(({ id }) => id),
