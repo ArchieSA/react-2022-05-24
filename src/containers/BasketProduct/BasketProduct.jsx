@@ -4,13 +4,13 @@ import { selectProductNameById } from "../../store/product/selectors";
 import { selectProductCountFromBasket } from "../../store/basket/selectors";
 import { BasketProduct } from "../../components/BasketProduct/BasketProduct";
 
-const BasketProductContainer = ({ selectedProductId, className }) => {
+const BasketProductContainer = ({ productId, className }) => {
   const productName = useSelector((state) =>
-    selectProductNameById(state, selectedProductId)
+    selectProductNameById(state, productId)
   );
 
   const productCount = useSelector((state) =>
-    selectProductCountFromBasket(state, selectedProductId)
+    selectProductCountFromBasket(state, productId)
   );
 
   return (

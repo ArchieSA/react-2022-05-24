@@ -3,20 +3,18 @@ import styles from "./styles.module.css";
 import classnames from "classnames";
 import BasketProduct from "../../containers/BasketProduct/BasketProduct";
 
-const Basket = ({ selectedProducts, className }) => {
-  return (
-    <div className={classnames(styles.root, className)}>
-      <h2>Basket</h2>
-      {selectedProducts &&
-        Object.keys(selectedProducts).map((productKey) => (
-          <BasketProduct
-            key={productKey}
-            selectedProductId={productKey}
-            className={styles.product}
-          />
-        ))}
-    </div>
-  );
-};
+const Basket = ({ productIds, className }) => (
+  <div className={classnames(styles.root, className)}>
+    <h2>Basket</h2>
+    {productIds?.length > 0 &&
+      productIds.map((productId) => (
+        <BasketProduct
+          key={productId}
+          productId={productId}
+          className={styles.product}
+        />
+      ))}
+  </div>
+);
 
 export default Basket;
