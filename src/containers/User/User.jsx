@@ -7,7 +7,7 @@ const UserContainer = ({userId, className}) => {
         selectUserNameById(state, userId)
     );
 
-    return <User className={className} userName={userName}/>
+    return <User key={userId} className={className} userName={userName}/>
 }
 
 export default UserContainer;

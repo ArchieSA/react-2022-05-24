@@ -1,14 +1,16 @@
 import {  useSelector } from "react-redux";
 import { selectProductNameById } from "../../store/product/selectors";
+import { selectProductCountFromBasket } from "../../store/basket/selectors";
 
 const CartItem = ({ productId, className, selectedProducts }) => {
   const productName = useSelector((state) =>
     selectProductNameById(state, productId)
   );
+  const qtyProduct = useSelector((state) => selectProductCountFromBasket(state, productId))
   return (
-      <div key={productId} className={className}>
+      <div className={className}>
         {productName}
-        <span>{selectedProducts}</span>
+        <span>{qtyProduct}</span>
       </div>
   );
 };
