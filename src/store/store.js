@@ -1,16 +1,16 @@
-import restaurantReducer from "./restaurant/reducer";
-import productReducer from "./product/reducer";
-import reviewReducer from "./review/reducer";
-import userReducer from "./user/reducer";
 import { configureStore } from "@reduxjs/toolkit";
 import basketSlice from "./basket";
+import restaurantSlice from "./restaurant/slice";
+import productSlice from "./product/slice";
+import reviewSlice from "./review/slice";
+import userSlice from "./user/slice";
 
 const rootReducer = (state, action) => ({
   basket: basketSlice.reducer(state?.basket, action),
-  restaurant: restaurantReducer(state?.restaurant, action),
-  product: productReducer(state?.product, action),
-  review: reviewReducer(state?.review, action),
-  user: userReducer(state?.user, action),
+  restaurant: restaurantSlice.reducer(state?.restaurant, action),
+  product: productSlice.reducer(state?.product, action),
+  review: reviewSlice.reducer(state?.review, action),
+  user: userSlice.reducer(state?.user, action),
 });
 
 export const store = configureStore({

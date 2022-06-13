@@ -1,3 +1,4 @@
+import { createSlice } from "@reduxjs/toolkit";
 import { normalizedProducts } from "../../constants/normalized-fixtures";
 
 const initialState = {
@@ -8,11 +9,10 @@ const initialState = {
   ids: [normalizedProducts.map(({ id }) => id)],
 };
 
-const productReducer = (state = initialState, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+const productSlice = createSlice({
+  name: "product",
+  initialState: initialState,
+  reducers: {},
+});
 
-export default productReducer;
+export default productSlice;
