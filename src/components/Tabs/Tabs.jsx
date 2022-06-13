@@ -1,18 +1,18 @@
 import React from "react";
-import { Tab } from "../Tab/Tab";
 
 import styles from "./styles.module.css";
+import TabsContainer from "../../containers/Tabs/Tabs";
 
-export const Tabs = ({ tabs, selectedId, onTabSelect }) => (
-    <div className={styles.root}>
-        {tabs.map(({ label, id }) => (
-            <Tab
-                key={id}
-                label={label}
-                onTabSelect={() => onTabSelect(id)}
-                isSelected={id === selectedId}
-                className={styles.tab}
-            />
-        ))}
-    </div>
+export const Tabs = ({ restaurantIds, selectedId, onTabSelect }) => (
+  <div className={styles.root}>
+    {restaurantIds.map((id) => (
+      <TabsContainer
+        key={id}
+        restaurantId={id}
+        onTabSelect={() => onTabSelect(id)}
+        isSelected={id === selectedId}
+        className={styles.tab}
+      />
+    ))}
+  </div>
 );
