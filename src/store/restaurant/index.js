@@ -10,8 +10,13 @@ const restaurantSlice = createSlice({
       return acc;
     }, {}),
     ids: normalizedRestaurants.map(({ id }) => id),
+    active: normalizedRestaurants[0].id,
   },
-  reducers: {},
+  reducers: {
+    selectActive: (state, { payload }) => {
+      return { ...state, active: payload };
+    },
+  },
 });
 
 export default restaurantSlice;

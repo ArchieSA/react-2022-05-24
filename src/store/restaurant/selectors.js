@@ -1,9 +1,9 @@
 import { selectReviewByIds } from "../review/selectors";
 import { createSelector } from "reselect";
 
-export const selectRestaurantState = (state) => state.restaurant;
+export const selectRestaurantState = state => state.restaurant;
 
-export const selectRestaurantIds = (state) => selectRestaurantState(state).ids;
+export const selectRestaurantIds = state => selectRestaurantState(state).ids;
 export const selectRestaurantById = (state, id) =>
   selectRestaurantState(state).entities[id];
 
@@ -13,7 +13,7 @@ const selectRestaurantReviewIds = (state, restaurantId) => {
 
 export const selectRestaurantRating = createSelector(
   [
-    (state) => state,
+    state => state,
     (_, restaurantId) => restaurantId,
     selectRestaurantReviewIds,
   ],
@@ -25,6 +25,16 @@ export const selectRestaurantRating = createSelector(
     );
   }
 );
+
+export const selectRestaurantTabs = state => {
+  const restaurants = selectRestaurantState(state).entities;
+  return Object.values(restaurants).map(({ id, name: label }) => ({
+    id,
+    label,
+  }));
+};
+
+export const selectActive = state => selectRestaurantState(state).active;
 
 // const selectorTest = () => {
 //   const result1 = selectResult1();
