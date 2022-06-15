@@ -4,8 +4,14 @@ import { createSelector } from "reselect";
 export const selectRestaurantState = (state) => state.restaurant;
 
 export const selectRestaurantIds = (state) => selectRestaurantState(state).ids;
+export const selectIsLoading = (state) =>
+  selectRestaurantState(state).status === "loading";
+export const selectIsFailed = (state) =>
+  selectRestaurantState(state).status === "failed";
 export const selectRestaurantById = (state, id) =>
   selectRestaurantState(state).entities[id];
+export const selectRestaurants = (state) =>
+  Object.values(selectRestaurantState(state).entities);
 
 const selectRestaurantReviewIds = (state, restaurantId) => {
   return selectRestaurantById(state, restaurantId).reviews;
