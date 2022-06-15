@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import styles from "./styles.module.css";
 import RestaurantContainer from "../../containers/Restaurant/Restaurant";
 import BasketContainer from "../../containers/Basket/Basket";
-import { Tabs } from "../Tabs/Tabs";
-
+import { RestaurantTabsContainer } from "../../containers/RestaurantTabs/RestaurantTabs";
 
 export const Restaurants = ({ restaurantIds }) => {
   const [currentRestaurantId, setCurrentRestaurantId] = useState(
@@ -18,7 +17,7 @@ export const Restaurants = ({ restaurantIds }) => {
   return (
     <div className={styles.root}>
       <div>
-        <Tabs restaurantIds={restaurantIds}
+        <RestaurantTabsContainer
             selectedId={currentRestaurantId}
             onTabSelect={setCurrentRestaurantId}/>
 

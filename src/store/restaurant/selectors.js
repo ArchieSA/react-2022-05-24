@@ -26,6 +26,9 @@ export const selectRestaurantRating = createSelector(
   }
 );
 
+export const selectRestaurants = (state) =>
+  Object.values(selectRestaurantState(state).entities);
+
 // const selectorTest = () => {
 //   const result1 = selectResult1();
 //   const result2 = selectResult2();
