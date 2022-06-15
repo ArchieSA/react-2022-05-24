@@ -9,7 +9,7 @@ const TabContainer = ({restaurantId, isSelected, onTabSelect, className}) => {
   const restaurant = useSelector((state) =>
       selectRestaurantById(state, restaurantId)
   );
-  console.log(isSelected);
+  // console.log(isSelected);
 
   return <Tab       restaurant={restaurant}
                     isSelected={isSelected}

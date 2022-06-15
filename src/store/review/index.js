@@ -10,14 +10,6 @@ const reviewSlice = createSlice({
     }, {}),
     ids: normalizedReviews.map(({ id }) => id),
   },
-  reducers: {
-    reviewReducer: (state = this.initialState, action) => {
-      switch (action.type) {
-        default:
-          return state;
-      }
-    },
-  },
 });
 
 export default reviewSlice;

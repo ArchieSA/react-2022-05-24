@@ -3,13 +3,13 @@ import {selectRestaurantById, selectRestaurantIds} from "../../store/restaurant/
 import React from "react";
 import { Tabs } from "../../components/Tabs/Tabs";
 
-const TabsContainer = ({restaurantId, onTabSelect}) => {
+const TabsContainer = ({isSelected, onTabSelect}) => {
   const restaurantIds = useSelector(selectRestaurantIds);
   // const restaurant = useSelector((state) =>
   //     selectRestaurantById(state, restaurantId)
   // );
-  console.log(restaurantId);
-  return <Tabs restaurantIds={restaurantIds} restaurantId={restaurantId} onTabSelect={onTabSelect} />;
+  // console.log(restaurantId);
+  return <Tabs restaurantIds={restaurantIds} isSelected={isSelected} onTabSelect={onTabSelect} />;
 };
 
 export default TabsContainer;

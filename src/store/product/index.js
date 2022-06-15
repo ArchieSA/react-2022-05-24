@@ -10,14 +10,6 @@ const productSlice = createSlice({
     }, {}),
     ids: normalizedProducts.map(({ id }) => id),
   },
-  reducers: {
-    productReducer: (state = this.initialState, action) => {
-      switch (action.type) {
-        default:
-          return state;
-      }
-    },
-  },
 });
 
 export default productSlice;

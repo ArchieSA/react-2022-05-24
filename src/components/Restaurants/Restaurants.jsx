@@ -26,7 +26,7 @@ export const Restaurants = ({ restaurantIds }) => {
         {/*    selectedId={currentRestaurantId}*/}
         {/*    onTabSelect={setCurrentRestaurantId}*/}
         {/*/>*/}
-        <TabsContainer restaurantId={currentRestaurantId} onTabSelect={setCurrentRestaurantId} />
+        <TabsContainer isSelected={currentRestaurantId} onTabSelect={setCurrentRestaurantId} />
         <RestaurantContainer restaurantId={currentRestaurantId} />
         <BasketContainer className={styles.basket} />
       </div>

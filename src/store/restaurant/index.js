@@ -10,14 +10,6 @@ const restaurantSlice = createSlice({
     }, {}),
     ids: normalizedRestaurants.map(({ id }) => id),
   },
-  reducers: {
-    restaurantReducer: (state = this.initialState, action) => {
-      switch (action?.type) {
-        default:
-          return state;
-      }
-    },
-  },
 });
 
 export default restaurantSlice;

@@ -20,17 +20,17 @@ import TabContainer from "../../containers/Tab/Tab";
 //     </div>
 // );
 
-export const Tabs = ( {restaurantIds, restaurantId, onTabSelect} ) => {
-
+export const Tabs = ( {restaurantIds, isSelected, onTabSelect} ) => {
+ // console.log(onTabSelect);
   return (
     <div className={styles.root}>
-      {restaurantIds.map((id, key) => (
+      {restaurantIds.map((id) => (
 
         <TabContainer
-            key={key}
+            key={id}
           restaurantId={id}
-          isSelected={restaurantId}
-          onTabSelect={onTabSelect}
+          isSelected={id === isSelected}
+          onTabSelect={() => onTabSelect(id)}
         />
       ))}
     </div>
