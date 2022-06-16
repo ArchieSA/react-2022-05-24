@@ -6,10 +6,7 @@ import {
   selectRestaurantIds,
 } from "../../store/restaurant/selectors";
 import { useEffect } from "react";
-import {
-  loadProductsByRestaurantIdIfNotExist,
-  loadRestaurantsIfNotExist,
-} from "../../store/restaurant/thunks/load-restaurants";
+import { loadRestaurantsIfNotExist } from "../../store/restaurant/thunks/load-restaurants";
 
 const RestaurantsContainer = () => {
   const dispatch = useDispatch();
