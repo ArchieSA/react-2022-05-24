@@ -13,6 +13,11 @@ export const selectRestaurantById = (state, id) =>
 export const selectRestaurants = (state) =>
   Object.values(selectRestaurantState(state).entities);
 
+  
+export const selectRestaurantProductIds = (state, restaurantId) => {
+  return selectRestaurantById(state, restaurantId).menu;
+};
+    
 const selectRestaurantReviewIds = (state, restaurantId) => {
   return selectRestaurantById(state, restaurantId).reviews;
 };
@@ -30,6 +35,7 @@ export const selectRestaurantRating = createSelector(
       reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length
     );
   }
+  
 );
 
 // const selectorTest = () => {

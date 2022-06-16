@@ -4,8 +4,7 @@ import { selectRestaurantIds } from "../selectors";
 export function loadRestaurantsIfNotExist() {
   return function (dispatch, getState) {
     if (selectRestaurantIds(getState())?.length > 0) {
-      console.log("already loaded");
-
+    //  console.log("already loaded");
       return;
     }
 

@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import styles from "./styles.module.css";
 import { Rating } from "../Rating/Rating";
 import { Reviews } from "../Reviews/component";
-import Menu from "../Menu/Menu";
+import { MenuContainer } from "../../containers/Menu/Menu";
+import { ReviewsContainer } from "../../containers/Reviews/Reviews";
+//import Menu from "../Menu/Menu";
 
 export const Restaurant = ({ restaurant, rating }) => {
   return (
@@ -13,9 +15,9 @@ export const Restaurant = ({ restaurant, rating }) => {
         <Rating value={rating} />
       </div>
       <div className={styles.detailedInfo}>
-        <Menu productIds={restaurant.menu} className={styles.menu} />
+        <MenuContainer className={styles.menu} restaurantId={restaurant.id} />
         <div className={styles.reviews}>
-          <Reviews reviewIds={restaurant.reviews} />
+          <ReviewsContainer reviewIds={restaurant.reviews} />
         </div>
       </div>
     </div>
