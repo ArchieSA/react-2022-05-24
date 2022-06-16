@@ -9,12 +9,14 @@ const RestaurantContainer = ({ restaurantId, className }) => {
   const restaurant = useSelector((state) =>
     selectRestaurantById(state, restaurantId)
   );
-  const rating = useSelector((state) =>
-    selectRestaurantRating(state, restaurantId)
-  );
+  // const rating = useSelector((state) =>
+  //   selectRestaurantRating(state, restaurantId)
+  // );
 
   return (
-    <Restaurant restaurant={restaurant} rating={rating} className={className} />
+    <Restaurant restaurant={restaurant} 
+    // rating={rating}
+     className={className} />
   );
 };
 
