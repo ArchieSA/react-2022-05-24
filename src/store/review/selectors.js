@@ -8,3 +8,8 @@ export const selectReviewByIds = (state, ids) => {
 
   return ids.map((id) => reviewById[id]);
 };
+
+export const selectIsLoading = (state) =>
+selectReviewState(state).status === "loading";
+export const selectIsFailed = (state) =>
+selectReviewState(state).status === "failed";
