@@ -9,8 +9,6 @@ const reviewSlice = createSlice({
   },
   reducers: {
     startLoading: (state) => {
-      state.entities = {};
-      state.ids = [];
       state.status = "loading";
     },
     failLoading: (state) => {
@@ -22,9 +20,9 @@ const reviewSlice = createSlice({
       state.entities = (payload || []).reduce((acc, review) => {
         acc[review.id] = review;
         return acc;
-      }, {});
+      }, state.entities);
 
-      state.ids = (payload || []).map(({id}) => id);
+      state.ids = [...state.ids, ...(payload || []).map(({id}) => id)];
 
       state.status = "success";
     }

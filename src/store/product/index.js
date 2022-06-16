@@ -9,8 +9,6 @@ const productSlice = createSlice({
   },
   reducers: {
     startLoading: (state) => {
-      state.entities = {};
-      state.ids = [];
       state.status = 'loading';
     },
     failLoading: (state) => {
@@ -25,7 +23,7 @@ const productSlice = createSlice({
         return acc;
       },  state.entities);
 
-      state.ids = (payload || []).map(({ id }) => id);
+      state.ids = [...state.ids, ...(payload || []).map(({ id }) => id)];
 
       state.status = "success";
     }

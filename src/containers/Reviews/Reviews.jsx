@@ -28,8 +28,8 @@ const ReviewsContainer = ({restaurantId, reviewIds}) => {
 
     return(
     <>
-        {reviewIds.map((item) => (
-            <ReviewContainer restaurantId={restaurantId} reviewId={item}/>
+        {reviewIds.map((item, i) => (
+            <ReviewContainer key={i} restaurantId={restaurantId} reviewId={item}/>
         ))}
     </>
     )
