@@ -14,8 +14,9 @@ const MenuContainer = ({ restaurantId, className }) => {
     const productIds = useSelector((state) => selectRestaurantMenuIds(state, restaurantId));
 
     useEffect(() => {
+        console.log("!!!useEffect Menu");
         dispatch(loadProductsIfNotExist(restaurantId));
-    }, [restaurantId]);
+    }, [productIds]);
 
     if (isLoading) {
         return <div className={styles.await}>Menu Loading...</div>;
