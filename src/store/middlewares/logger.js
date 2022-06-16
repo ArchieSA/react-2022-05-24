@@ -1,7 +1,7 @@
 import { selectBasket } from "../basket/selectors";
 
 export const logger1 = (store) => (next) => (action) => {
-  console.log("1: ", action);
+  // console.log("1: ", action);
 
   next(action);
 };

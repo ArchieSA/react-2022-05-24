@@ -4,17 +4,25 @@ import { createSelector } from "reselect";
 export const selectRestaurantState = (state) => state.restaurant;
 
 export const selectRestaurantIds = (state) => selectRestaurantState(state).ids;
+
 export const selectIsLoading = (state) =>
   selectRestaurantState(state).status === "loading";
+
 export const selectIsFailed = (state) =>
   selectRestaurantState(state).status === "failed";
+
 export const selectRestaurantById = (state, id) =>
   selectRestaurantState(state).entities[id];
+
 export const selectRestaurants = (state) =>
   Object.values(selectRestaurantState(state).entities);
 
-const selectRestaurantReviewIds = (state, restaurantId) => {
+export const selectRestaurantReviewIds = (state, restaurantId) => {
   return selectRestaurantById(state, restaurantId).reviews;
+};
+
+export const selectRestaurantMenuIds = (state, restaurantId) => {
+  return selectRestaurantById(state, restaurantId).menu;
 };
 
 export const selectRestaurantRating = createSelector(
@@ -26,9 +34,12 @@ export const selectRestaurantRating = createSelector(
   (state, restaurantId, reviewIds) => {
     const reviews = selectReviewByIds(state, reviewIds);
 
-    return Math.ceil(
-      reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length
-    );
+    return reviews[0]
+      ? Math.ceil(
+          reviews?.reduce((prev, curr) => prev + curr.rating, 0) /
+            reviews.length
+        )
+      : 0;
   }
 );
 

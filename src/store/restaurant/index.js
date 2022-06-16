@@ -13,11 +13,13 @@ const restaurantSlice = createSlice({
       state.ids = [];
       state.status = "loading";
     },
+
     failLoading: (state) => {
       state.entities = {};
       state.ids = [];
       state.status = "failed";
     },
+
     successLoading: (state, { payload }) => {
       state.entities = (payload || []).reduce((acc, restaurant) => {
         acc[restaurant.id] = restaurant;
