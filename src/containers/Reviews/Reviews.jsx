@@ -15,7 +15,7 @@ export const ReviewsContainer = ({ restaurantId }) => {
 
   useEffect(() => {
     dispatch(loadReviewsIfNotExist(restaurantId));
-  }, [reviewIds]);
+  }, [restaurantId]);
 
   if (isLoading) {
     return <span>Loading...</span>;

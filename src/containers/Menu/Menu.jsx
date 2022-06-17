@@ -16,7 +16,7 @@ const MenuContainer = ({ restaurantId, className }) => {
 
   useEffect(() => {
     dispatch(loadProductsIfNotExist(restaurantId));
-  }, [productIds]);
+  }, [restaurantId]);
 
   if (isLoading) {
     return <span>Loading...</span>;
