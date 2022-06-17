@@ -1,25 +1,31 @@
-import { selectReviewByIds } from "../review/selectors";
-import { createSelector } from "reselect";
+import { selectReviewByIds } from '../review/selectors';
+import { createSelector } from 'reselect';
 
-export const selectRestaurantState = (state) => state.restaurant;
+export const selectRestaurantState = state => state.restaurant;
 
-export const selectRestaurantIds = (state) => selectRestaurantState(state).ids;
-export const selectIsLoading = (state) =>
-  selectRestaurantState(state).status === "loading";
-export const selectIsFailed = (state) =>
-  selectRestaurantState(state).status === "failed";
+export const selectRestaurantIds = state => selectRestaurantState(state).ids;
+
+export const selectIsLoading = state =>
+  selectRestaurantState(state).status === 'loading';
+
+export const selectIsFailed = state =>
+  selectRestaurantState(state).status === 'failed';
+
 export const selectRestaurantById = (state, id) =>
   selectRestaurantState(state).entities[id];
-export const selectRestaurants = (state) =>
+
+export const selectRestaurants = state =>
   Object.values(selectRestaurantState(state).entities);
 
-const selectRestaurantReviewIds = (state, restaurantId) => {
-  return selectRestaurantById(state, restaurantId).reviews;
-};
+export const selectRestaurantReviewIds = (state, restaurantId) =>
+  selectRestaurantById(state, restaurantId)?.reviews;
+
+export const selectRestaurantMenuIds = (state, restaurantId) =>
+  selectRestaurantById(state, restaurantId)?.menu;
 
 export const selectRestaurantRating = createSelector(
   [
-    (state) => state,
+    state => state,
     (_, restaurantId) => restaurantId,
     selectRestaurantReviewIds,
   ],

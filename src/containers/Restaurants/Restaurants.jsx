@@ -7,7 +7,6 @@ import {
 } from "../../store/restaurant/selectors";
 import { useEffect } from "react";
 import {
-  loadProductsByRestaurantIdIfNotExist,
   loadRestaurantsIfNotExist,
 } from "../../store/restaurant/thunks/load-restaurants";
 

@@ -1,14 +1,34 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { normalizedReviews } from "../../constants/normalized-fixtures";
+import { createSlice } from '@reduxjs/toolkit';
 
 const reviewSlice = createSlice({
-  name: "review",
+  name: 'review',
   initialState: {
-    entities: normalizedReviews.reduce((acc, review) => {
-      acc[review.id] = review;
-      return acc;
-    }, {}),
-    ids: normalizedReviews.map(({ id }) => id),
+    entities: {},
+    ids: [],
+    status: 'notStarted',
+  },
+  reducers: {
+    startLoading: state => {
+      state.status = 'loading';
+    },
+    failLoading: state => {
+      state.entities = {};
+      state.ids = [];
+      state.status = 'failed';
+    },
+    successLoading: (state, { payload }) => {
+      state.entities = {
+        ...state.entities,
+        ...(payload || []).reduce((acc, review) => {
+          acc[review.id] = review;
+          return acc;
+        }, {}),
+      };
+
+      state.ids = [...state.ids, ...(payload || []).map(({ id }) => id)];
+
+      state.status = 'success';
+    },
   },
 });
 
