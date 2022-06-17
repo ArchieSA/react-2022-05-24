@@ -13,8 +13,13 @@ export const selectRestaurantById = (state, id) =>
 export const selectRestaurants = (state) =>
   Object.values(selectRestaurantState(state).entities);
 
-const selectRestaurantReviewIds = (state, restaurantId) => {
+export const selectRestaurantReviewIds = (state, restaurantId) => {
   return selectRestaurantById(state, restaurantId).reviews;
+};
+
+export const selectRestaurantMenuIds = (state, restaurantId) => {
+  //console.log(selectRestaurantById(state, restaurantId).menu);
+  return selectRestaurantById(state, restaurantId).menu;
 };
 
 export const selectRestaurantRating = createSelector(
@@ -24,11 +29,14 @@ export const selectRestaurantRating = createSelector(
     selectRestaurantReviewIds,
   ],
   (state, restaurantId, reviewIds) => {
-    const reviews = selectReviewByIds(state, reviewIds);
+    const selectedReviews = selectReviewByIds(state, reviewIds);
 
-    return Math.ceil(
-      reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length
-    );
+    return selectedReviews[0]
+      ? Math.ceil(
+          selectedReviews?.reduce((prev, curr) => prev + curr.rating, 0) /
+            selectedReviews.length
+        )
+      : 0;
   }
 );
 
