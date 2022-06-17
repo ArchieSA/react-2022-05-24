@@ -10,6 +10,7 @@ import {
   loadProductsByRestaurantIdIfNotExist,
   loadRestaurantsIfNotExist,
 } from "../../store/restaurant/thunks/load-restaurants";
+import { loadProductsIfNotExist } from "../../store/product/thunks/load-products";
 
 const RestaurantsContainer = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const RestaurantsContainer = () => {
   // load restaurants with thunk
   useEffect(() => {
     dispatch(loadRestaurantsIfNotExist());
+    dispatch(loadProductsIfNotExist());
   }, []);
 
   // load restaurants with middleware
