@@ -4,7 +4,6 @@ import { selectRestaurantMenuIds } from "../../restaurant/selectors";
 
 export function loadProductsIfNotExist(restaurantId) {
   return function (dispatch, getState) {
-    //!!!!!!!!!!!!!!!!
     const restauranMenuIds = selectRestaurantMenuIds(getState(), restaurantId);
     const loadedProductIds = selectProductIds(getState());
     const notExistProducts = restauranMenuIds.filter(
