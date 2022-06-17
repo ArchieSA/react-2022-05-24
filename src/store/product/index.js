@@ -8,9 +8,8 @@ const productSlice = createSlice({
       acc[product.id] = product;
       return acc;
     }, {}),
-    ids: [normalizedProducts.map(({ id }) => id)],
+    ids: normalizedProducts.map(({ id }) => id),
   },
-  reducers: {},
 });
 
 export default productSlice;

@@ -8,9 +8,8 @@ const reviewSlice = createSlice({
       acc[review.id] = review;
       return acc;
     }, {}),
-    ids: [normalizedReviews.map(({ id }) => id)],
+    ids: normalizedReviews.map(({ id }) => id),
   },
-  reducers: {},
 });
 
 export default reviewSlice;

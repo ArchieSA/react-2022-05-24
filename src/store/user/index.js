@@ -8,9 +8,8 @@ const userSlice = createSlice({
       acc[user.id] = user;
       return acc;
     }, {}),
-    ids: [normalizedUsers.map(({ id }) => id)],
+    ids: normalizedUsers.map(({ id }) => id),
   },
-  reducers: {},
 });
 
 export default userSlice;
