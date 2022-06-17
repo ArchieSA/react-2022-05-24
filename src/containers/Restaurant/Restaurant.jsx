@@ -13,6 +13,8 @@ const RestaurantContainer = ({ restaurantId, className }) => {
     selectRestaurantRating(state, restaurantId)
   );
 
+  console.log("rating", rating);
+
   return (
     <Restaurant restaurant={restaurant} rating={rating} className={className} />
   );
