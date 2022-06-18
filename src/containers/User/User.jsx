@@ -1,13 +1,27 @@
 import React from "react";
 import { User } from "../../components/User/User";
-import { useSelector } from "react-redux";
-import { selectUserNameById } from "../../store/user/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUserIsFailed, selectUserIsLoading, selectUserNameById, selectUsersExist } from "../../store/user/selectors";
+import { useEffect } from "react";
+import loadUsersIfNotExist from "../../store/user/thunks/load-users";
 
 const UserContainer = ({ userId, className }) => {
+  const dispatch = useDispatch();
   const name = useSelector((state) => selectUserNameById(state, userId));
+  const isExistUsers = useSelector(selectUsersExist);
+  const isLoading = useSelector(selectUserIsLoading);
+  const isFailed = useSelector(selectUserIsFailed);
 
-  if (!name) {
+  useEffect(() => {
+    dispatch(loadUsersIfNotExist());
+  }, []);
+
+  if (!isExistUsers || isLoading) {
     return null;
+  }
+
+  if (isFailed) {
+    return <span>Error</span>;
   }
 
   return <User name={name} className={className} />;

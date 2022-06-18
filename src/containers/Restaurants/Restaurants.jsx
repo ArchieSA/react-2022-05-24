@@ -1,8 +1,8 @@
 import { Restaurants } from "../../components/Restaurants/Restaurants";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  selectIsFailed,
-  selectIsLoading,
+  selectRestaurantIsFailed,
+  selectRestaurantIsLoading,
   selectRestaurantIds,
 } from "../../store/restaurant/selectors";
 import { useEffect } from "react";
@@ -14,8 +14,8 @@ import {
 const RestaurantsContainer = () => {
   const dispatch = useDispatch();
   const restaurantIds = useSelector(selectRestaurantIds);
-  const isLoading = useSelector(selectIsLoading);
-  const isFailed = useSelector(selectIsFailed);
+  const isLoading = useSelector(selectRestaurantIsLoading);
+  const isFailed = useSelector(selectRestaurantIsFailed);
 
   // load restaurants with thunk
   useEffect(() => {

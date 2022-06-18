@@ -1,10 +1,10 @@
 import restaurantSlice from "../index";
-import { selectRestaurantIds } from "../selectors";
+import { selectIsLoading, selectRestaurantIds } from "../selectors";
 
 export function loadRestaurantsIfNotExist() {
   return function (dispatch, getState) {
     if (selectRestaurantIds(getState())?.length > 0) {
-      console.log("already loaded");
+      console.log("restaurants already loaded");
 
       return;
     }

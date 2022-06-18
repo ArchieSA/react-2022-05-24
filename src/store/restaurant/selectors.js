@@ -4,9 +4,9 @@ import { createSelector } from "reselect";
 export const selectRestaurantState = (state) => state.restaurant;
 
 export const selectRestaurantIds = (state) => selectRestaurantState(state).ids;
-export const selectIsLoading = (state) =>
+export const selectRestaurantIsLoading = (state) =>
   selectRestaurantState(state).status === "loading";
-export const selectIsFailed = (state) =>
+export const selectRestaurantIsFailed = (state) =>
   selectRestaurantState(state).status === "failed";
 export const selectRestaurantById = (state, id) =>
   selectRestaurantState(state).entities[id];
@@ -25,6 +25,10 @@ export const selectRestaurantRating = createSelector(
   ],
   (state, restaurantId, reviewIds) => {
     const reviews = selectReviewByIds(state, reviewIds);
+
+    if (reviews.length == 0) {
+      return 0;
+    }
 
     return Math.ceil(
       reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length
