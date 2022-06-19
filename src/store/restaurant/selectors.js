@@ -27,7 +27,7 @@ export const selectRestaurantRating = createSelector(
     const reviews = selectReviewByIds(state, reviewIds);
 
     return Math.ceil(
-      reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length
+      reviews.reduce((prev, curr) => prev + curr?.rating, 0) / reviews.length
     );
   }
 );

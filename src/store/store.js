@@ -4,8 +4,6 @@ import productSlice from "./product";
 import restaurantSlice from "./restaurant";
 import reviewSlice from "./review";
 import userSlice from "./user";
-import { logger1 } from "./middlewares/logger";
-import { loadRestaurantsIfNotExistMiddleware } from "./restaurant/middlewares/load-restaurants";
 
 const rootReducer = (state, action) => ({
   basket: basketSlice.reducer(state?.basket, action),
@@ -19,8 +17,6 @@ export const store = configureStore({
   reducer: rootReducer,
   devTools: process.env.NODE_ENV !== "production",
   middleware: (getDefaultMiddleware) => [
-    ...getDefaultMiddleware(),
-    logger1,
-    loadRestaurantsIfNotExistMiddleware,
-  ],
+    ...getDefaultMiddleware()
+    ],
 });
