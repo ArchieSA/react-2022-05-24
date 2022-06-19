@@ -1,5 +1,6 @@
 .root {
     display: flex;
+    padding: 0px 25px;
 }
 
 .actions {

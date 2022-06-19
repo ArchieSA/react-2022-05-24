@@ -5,7 +5,6 @@ import ProductContainer from "../../containers/Product/Product";
 
 const Menu = ({ productIds, className }) => (
   <div className={classnames(styles.root, className)}>
-    <span className={styles.menuTitle}>Menu</span>
     {productIds?.map((productId) => (
       <ProductContainer
         key={productId}

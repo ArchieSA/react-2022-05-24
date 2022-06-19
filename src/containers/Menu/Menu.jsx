@@ -7,8 +7,10 @@ import {
   selectIsProductsLoading,
 } from "../../store/product/selectors";
 import { selectRestaurantProductsById } from "../../store/restaurant/selectors";
+import { useParams } from "react-router";
 
-export const MenuContainer = ({ restaurantId, ...props }) => {
+export const MenuContainer = ({ ...props }) => {
+  const { id: restaurantId } = useParams();
   const dispatch = useDispatch();
   const isProductsLoading = useSelector(selectIsProductsLoading);
   const isProductsFailed = useSelector(selectIsProductsFailed);

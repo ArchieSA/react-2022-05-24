@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-
+import React from "react";
 import styles from "./styles.module.css";
 import { Rating } from "../Rating/Rating";
-import { MenuContainer } from "../../containers/Menu/Menu";
-import { ReviewsContainer } from "../../containers/Reviews/Reviews";
+import { Outlet } from "react-router";
+import { NavLink } from "react-router-dom";
+import classNames from "classnames";
 
 export const Restaurant = ({ restaurant, rating }) => {
   return (
@@ -12,12 +12,21 @@ export const Restaurant = ({ restaurant, rating }) => {
         <span className={styles.restaurantName}>{restaurant.name}</span>
         <Rating value={rating} />
       </div>
-      <div className={styles.detailedInfo}>
-        <MenuContainer restaurantId={restaurant.id} className={styles.menu} />
-        <div className={styles.reviews}>
-          <ReviewsContainer restaurantId={restaurant.id} />
-        </div>
+
+      <div className={styles.tabs}>
+        <NavLink to={`/restaurants/${restaurant.id}/menu`} className={
+          ({ isActive }) => classNames(styles.button, { [styles.selected]: isActive })}>
+
+          Menu
+        </NavLink>
+        <NavLink to={`/restaurants/${restaurant.id}/reviews`} className={
+          ({ isActive }) => classNames(styles.button, { [styles.selected]: isActive })}>
+
+          Reviews
+        </NavLink>
       </div>
+
+      <Outlet />
     </div>
   );
 };

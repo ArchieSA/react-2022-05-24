@@ -24,18 +24,31 @@
     margin-bottom: 20px;
 }
 
-
-.detailedInfo {
+.tabs {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    margin: 20px;
+    height: 60px;
+    background-color: #808080;
 }
 
-.reviews {
-    margin: 10px 40px;
+.button {
+    border: none;
+    background: inherit;
+    font-size: 18px;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
 }
 
-.menu {
-    margin: 10px 40px;
+.button.selected {
+    border-bottom: 1px solid black;
+    padding-bottom: 9px;
+}
+
+.button:hover {
+    border-bottom: 2px solid black;
+    padding-bottom: 8px;
+    cursor: pointer;
 }

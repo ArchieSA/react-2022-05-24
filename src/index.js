@@ -12,6 +12,8 @@ import RestaurantContainer from "./containers/Restaurant/Restaurant";
 import { AllProductsPage } from "./pages/AllProductsPage/AllProductsPage";
 import ProductDetailsContainer from "./containers/ProductDetails/ProductDetails";
 import { ProductDetailsPage } from "./pages/ProductDetailsPage/ProductDetailsPage";
+import { ReviewsContainer } from "./containers/Reviews/Reviews";
+import { MenuContainer } from "./containers/Menu/Menu";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -22,7 +24,10 @@ root.render(
         <Route index element={<MainPage />} />
         <Route path="/restaurants" element={<RestaurantsPage />}>
           <Route index element={<span>Select restaurant</span>} />
-          <Route path=":id" element={<RestaurantContainer />} />
+          <Route path=":id" element={<RestaurantContainer />}>
+            <Route path="menu" element={<MenuContainer />} />
+            <Route path="reviews" element={<ReviewsContainer />} />
+          </Route>
         </Route>
         <Route path="/allProducts" element={<AllProductsPage />} />
         <Route path="/product" element={<ProductDetailsPage />}>
