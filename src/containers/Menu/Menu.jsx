@@ -1,14 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Menu from "../../components/Menu/Menu";
-import { loadProductsIfNotExist } from "../../store/product/thunk/load-product";
+import { loadRestProductsIfNotExist } from "../../store/product/thunk/load-rest-products";
 import {
   selectIsProductsFailed,
   selectIsProductsLoading,
 } from "../../store/product/selectors";
 import { selectRestaurantProductsById } from "../../store/restaurant/selectors";
+import { useParams } from "react-router";
 
-export const MenuContainer = ({ restaurantId, ...props }) => {
+export const MenuContainer = ({ ...props }) => {
+  const { id: restaurantId } = useParams();
   const dispatch = useDispatch();
   const isProductsLoading = useSelector(selectIsProductsLoading);
   const isProductsFailed = useSelector(selectIsProductsFailed);
@@ -17,7 +19,7 @@ export const MenuContainer = ({ restaurantId, ...props }) => {
   );
 
   useEffect(() => {
-    dispatch(loadProductsIfNotExist(restaurantId));
+    dispatch(loadRestProductsIfNotExist(restaurantId));
   }, [restaurantId]);
 
   if (isProductsFailed) {
