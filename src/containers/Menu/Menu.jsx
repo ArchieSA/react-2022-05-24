@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Menu from "../../components/Menu/Menu";
-import { loadProductsIfNotExist } from "../../store/product/thunk/load-product";
+import { loadRestProductsIfNotExist } from "../../store/product/thunk/load-rest-products";
 import {
   selectIsProductsFailed,
   selectIsProductsLoading,
@@ -17,7 +17,7 @@ export const MenuContainer = ({ restaurantId, ...props }) => {
   );
 
   useEffect(() => {
-    dispatch(loadProductsIfNotExist(restaurantId));
+    dispatch(loadRestProductsIfNotExist(restaurantId));
   }, [restaurantId]);
 
   if (isProductsFailed) {

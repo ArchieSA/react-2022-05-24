@@ -7,14 +7,25 @@ router.get('/restaurants', (req, res, next) => {
 });
 
 router.get('/products', (req, res, next) => {
-  const { id } = req.query;
   let result = products;
+
+  const { id } = req.query;
   if (id) {
     const restaurant = getById(restaurants)(id);
     if (restaurant) {
       result = restaurant.menu.map(getById(result));
+      reply(res, result);
+      return;
     }
   }
+
+  const { productId } = req.query;
+  if (productId) {
+    const product = products.filter(p => p.id == productId)
+    reply(res, product);
+    return;
+  }
+
   reply(res, result);
 });
 
