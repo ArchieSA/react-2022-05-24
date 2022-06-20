@@ -1,15 +1,23 @@
 import { selectProductIds } from '../selectors';
 import productSlice from '../index';
+import { selectRestaurantProductsById } from '../../restaurant/selectors';
 
-export function loadProductIfNotExist(productId) {
+export function loadProductsIfNotExist(restaurantId) {
   return function (dispatch, getState) {
     const productIds = selectProductIds(getState());
 
+    const restaurantProducts = selectRestaurantProductsById(getState(), {
+      restaurantId,
+    });
+
     const queryParams = `?${new URLSearchParams({
-      productId,
+      restaurantId,
     })}`;
 
-    if (productIds?.length && productIds.includes(productId)) {
+    if (
+      productIds?.length &&
+      restaurantProducts.every(productId => productIds.includes(productId))
+    ) {
       console.log('already loaded');
       return;
     }
@@ -18,8 +26,8 @@ export function loadProductIfNotExist(productId) {
 
     fetch(`http://localhost:3001/api/products${queryParams}`)
       .then(response => response.json())
-      .then(product => {
-        dispatch(productSlice.actions.successLoading([product]));
+      .then(products => {
+        dispatch(productSlice.actions.successLoading(products));
       })
       .catch(error => {
         dispatch(productSlice.actions.failLoading(error));

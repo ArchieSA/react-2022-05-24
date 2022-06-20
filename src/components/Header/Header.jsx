@@ -8,10 +8,13 @@ export const Header = () => {
       <Link to="/" className={styles.logoLink}>
         <img src={Logo} className={styles.logo} alt="logo" />
       </Link>
-      <Link to="/restaurants" className={styles.restaurantsLink}>
+      <Link to="/menu" className={styles.headerLink}>
+        Menu
+      </Link>
+      <Link to="/restaurants" className={styles.headerLink}>
         Restaurants
       </Link>
-      <Link to="/basket" className={styles.basketLink}>
+      <Link to="/basket" className={styles.headerLink}>
         Basket
       </Link>
     </header>
