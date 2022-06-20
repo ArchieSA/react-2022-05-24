@@ -2,26 +2,21 @@ import React, { useState } from "react";
 
 import styles from "./styles.module.css";
 import { Rating } from "../Rating/Rating";
-import { Reviews } from "../Reviews/component";
-import Menu from "../Menu/Menu";
+import { MenuContainer } from "../../containers/Menu/Menu";
+import { ReviewsContainer } from "../../containers/Reviews/Reviews";
 
-export const Restaurant = ({ restaurant }) => {
-  // const restaurantRate = Math.ceil(
-  //     restaurant.reviews.reduce((prev, curr) => prev + curr.rating, 0) /
-  //     restaurant.reviews.length
-  // );
-
+export const Restaurant = ({ restaurant, rating }) => {
   return (
     <div className={styles.root}>
       <div className={styles.mainInfo}>
         <span className={styles.restaurantName}>{restaurant.name}</span>
-        {/*<Rating value={restaurantRate} />*/}
+        <Rating value={rating} />
       </div>
       <div className={styles.detailedInfo}>
-        <Menu productIds={restaurant.menu} className={styles.menu} />
-        {/*<div className={styles.reviews}>*/}
-        {/*    <Reviews reviews={restaurant.reviews} />*/}
-        {/*</div>*/}
+        <MenuContainer restaurantId={restaurant.id} className={styles.menu} />
+        <div className={styles.reviews}>
+          <ReviewsContainer restaurantId={restaurant.id} />
+        </div>
       </div>
     </div>
   );

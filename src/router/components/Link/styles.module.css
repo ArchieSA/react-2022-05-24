@@ -1,0 +1,10 @@
+.root {
+    text-decoration: none;
+    color: white;
+    transition: 0.1s;
+}
+
+.root:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}

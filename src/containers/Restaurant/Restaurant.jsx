@@ -1,13 +1,30 @@
 import { Restaurant } from "../../components/Restaurant/Restaurant";
-import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../store/restaurant/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectRestaurantById,
+  selectRestaurantRating,
+} from "../../store/restaurant/selectors";
+import { useEffect } from "react";
+import { loadReviewsIfNotExist } from "../../store/review/thunk/load-reviews";
+import { useParams } from "react-router-dom";
 
-const RestaurantContainer = ({ restaurantId, className }) => {
+const RestaurantContainer = ({ className }) => {
+  const { id: restaurantId } = useParams();
+  const dispatch = useDispatch();
   const restaurant = useSelector((state) =>
     selectRestaurantById(state, restaurantId)
   );
+  const rating = useSelector((state) =>
+    selectRestaurantRating(state, restaurantId)
+  );
 
-  return <Restaurant restaurant={restaurant} className={className} />;
+  useEffect(() => {
+    dispatch(loadReviewsIfNotExist(restaurantId));
+  }, [restaurantId]);
+
+  return (
+    <Restaurant restaurant={restaurant} rating={rating} className={className} />
+  );
 };
 
 export default RestaurantContainer;

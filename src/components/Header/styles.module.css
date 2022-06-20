@@ -7,8 +7,12 @@
   background-color: #000;
 }
 
-.logo {
+.logoLink {
   margin-left: 20px;
+  margin-right: auto;
+}
+
+.logo {
   height: 18px;
   width: 115px;
 }
@@ -16,4 +20,18 @@
 .themeSwitcher {
  margin-left: auto;
   margin-right: 20px;
+}
+
+.basketLink, .restaurantsLink {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.basketLink {
+  margin-right: 30px;
+}
+
+.restaurantsLink {
+  margin-right: 30px;
 }

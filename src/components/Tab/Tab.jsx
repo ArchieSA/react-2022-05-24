@@ -1,30 +1,27 @@
-import React, {useContext} from 'react';
+import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
-import styles from './styles.module.css';
-import {ThemeContext} from "../../contexts/ThemeContext/ThemeContext";
-import {THEMES} from "../../constants/theme";
+import styles from "./styles.module.css";
+import { NavLink } from "react-router-dom";
 
-export const Tab = ({ label, onTabSelect, isSelected, className }) => {
-    const {theme} = useContext(ThemeContext);
-    return (
-        <button
-            className={classnames(styles.root, className, {
-                [styles.selected]: isSelected,
-                [styles.dark]: theme === THEMES.Dark,
-                [styles.light]: theme === THEMES.Light,
-            })}
-            onClick={onTabSelect}
-        >
-            {label}
-        </button>
-    )
+export const Tab = ({ label, id, className }) => {
+  return (
+    <NavLink
+      to={`/restaurants/${id}`}
+      className={({ isActive }) =>
+        classnames(styles.root, className, {
+          [styles.selected]: isActive,
+        })
+      }
+    >
+      {label}
+    </NavLink>
+  );
 };
 
-
 Tab.propTypes = {
-    label: PropTypes.string.isRequired,
-    isSelected: PropTypes.bool,
-    className: PropTypes.string,
-}
+  label: PropTypes.string.isRequired,
+  isSelected: PropTypes.bool,
+  className: PropTypes.string,
+};
