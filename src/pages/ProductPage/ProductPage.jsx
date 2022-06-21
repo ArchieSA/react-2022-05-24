@@ -9,7 +9,6 @@ import { loadProductDetails } from "../../store/product/thunk/load-product-detai
 
 export const ProductPage = () => {
     const params = useParams();
-    console.log('page: ', params.id)
   return (
     <Layout>
       <ErrorBoundary>

@@ -12,7 +12,6 @@ export const ProductDetails = ({
   ingredinets,
   productPrice,
 }) => {
-    console.log('aaas');
   return (
     <div className={classnames(styles.root, className)}>
       <h2>{name}</h2>

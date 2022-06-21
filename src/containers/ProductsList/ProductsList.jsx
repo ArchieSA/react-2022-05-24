@@ -14,11 +14,9 @@ export const ProductsListContainer = () => {
     const isProductsLoading = useSelector(selectIsProductsLoading);
     const isProductsFailed = useSelector(selectIsProductsFailed);
     const productIds = useSelector(selectProductIds);
-    const [alreadyLoaded, setLoaded] = useState('false');
-    console.log(' ? : ', alreadyLoaded);
     
     useEffect(() => {
-        dispatch(loadAllProducts({alreadyLoaded, setLoaded}))
+        dispatch(loadAllProducts())
     }, []);
 
     
