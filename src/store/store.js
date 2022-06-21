@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import basketSlice from "./basket";
-import productSlice from "./product";
+import productSlice from "./menu";
 import restaurantSlice from "./restaurant";
 import reviewSlice from "./review";
 import userSlice from "./user";

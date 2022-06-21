@@ -2,7 +2,6 @@ import reviewSlice from ".."
 import { selectIsAllRestaurantReviewsLoaded } from "../selectors";
 
 export const loadReviewsIfNotExist = (restaurantId) => (dispatch, getState) => {
-
     if (selectIsAllRestaurantReviewsLoaded(getState(), restaurantId)){
         return;
     }
@@ -17,4 +16,4 @@ export const loadReviewsIfNotExist = (restaurantId) => (dispatch, getState) => {
         .catch(() => {
             dispatch(reviewSlice.actions.loadingFailed());
         });
-}
+};

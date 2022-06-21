@@ -5,3 +5,5 @@ export const selectUserById = (state, id) =>
 
 export const selectUserNameById = (state, id) =>
   selectUserById(state, id)?.name;
+
+export const selectUserIds = (state) => selectUserState(state)?.ids;

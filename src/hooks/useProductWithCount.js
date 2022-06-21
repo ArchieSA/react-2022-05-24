@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectProductNameById } from "../store/product/selectors";
+import { selectProductNameById } from "../store/menu/selectors";
 import { selectProductCountFromBasket } from "../store/basket/selectors";
 
 const useProductWithCount = (productId) => {

@@ -19,7 +19,7 @@ const reviewSlice = createSlice({
         acc[review.id] = review;
         return acc;
       }, state.entities);
-      state.ids = (payload || []).map(({ id }) => id);
+      state.ids = state.ids.concat((payload || []).map(({ id }) => id));
       state.status = "success";
     },
   }

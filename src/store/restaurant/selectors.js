@@ -9,13 +9,16 @@ export const selectIsLoading = (state) =>
 export const selectIsFailed = (state) =>
   selectRestaurantState(state).status === "failed";
 export const selectRestaurantById = (state, id) =>
-  selectRestaurantState(state).entities[id];
+  selectRestaurantState(state)?.entities[id];
 export const selectRestaurants = (state) =>
   Object.values(selectRestaurantState(state).entities);
 
 const selectRestaurantReviewIds = (state, restaurantId) => {
   return selectRestaurantById(state, restaurantId).reviews;
 };
+export const selectRestaurantMenu = (state, restaurantId) => {
+  return selectRestaurantById(state, restaurantId)?.menu;
+}
 
 export const selectRestaurantRating = createSelector(
   [
