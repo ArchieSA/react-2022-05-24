@@ -1,0 +1,13 @@
+.root{
+  display: flex;
+  flex-direction: column;
+}
+.productLink{
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.productLink:hover{
+  opacity: 0.75;
+}
