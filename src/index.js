@@ -8,7 +8,9 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { RestaurantsPage } from "./pages/RestaurantsPage/RestaurantsPage";
 import { NotFoundPage } from "./pages/NotFounPage/NotFoundPage";
+import { ListOfProductsPage } from "./pages/ListOfProductsPage/ListOfProductsPage";
 import RestaurantContainer from "./containers/Restaurant/Restaurant";
+import { ProductPage } from "./pages/ProductPage/ProductPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -21,6 +23,8 @@ root.render(
           <Route index element={<span>Select restaurant</span>} />
           <Route path=":id" element={<RestaurantContainer />} />
         </Route>
+        <Route path="/products" element={<ListOfProductsPage />} /> 
+        <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/basket" element={<BasketPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

@@ -7,6 +7,12 @@ export const selectProductById = (state, id) =>
 export const selectProductNameById = (state, id) =>
   selectProductState(state).entities[id]?.name;
 
+export const selectProductPriceById = (state, id) =>
+selectProductState(state).entities[id]?.price;
+
+export const selectProductProductIngredientsById = (state, id) =>
+selectProductState(state).entities[id]?.ingredients;
+
 export const selectIsProductsLoading = (state) =>
   selectProductState(state).status === "loading";
 export const selectIsProductsFailed = (state) =>

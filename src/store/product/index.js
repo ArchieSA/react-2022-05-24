@@ -15,6 +15,7 @@ const productSlice = createSlice({
       state.status = "failed";
     },
     successLoading: (state, { payload }) => {
+      
       state.entities = (payload || []).reduce(
         (acc, product) => {
           acc[product.id] = product;
@@ -22,12 +23,13 @@ const productSlice = createSlice({
         },
         { ...state.entities }
       );
-
-      state.ids = [...state.ids, ...(payload || []).map(({ id }) => id)];
-
+     ;
+      state.ids =  [...new Set([...state.ids, ...(payload || []).map((item) => item.id )])];
+      console.log('state ids: ', state.ids);
       state.status = "success";
     },
   },
 });
 
 export default productSlice;
+
