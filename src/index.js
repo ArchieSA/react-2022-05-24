@@ -1,16 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { MainPage } from "./pages/Main/MainPage";
-import "./index.css";
-import { BasketPage } from "./pages/BasketPage/BasketPage";
-import { store } from "./store/store";
-import { Provider } from "react-redux";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { RestaurantsPage } from "./pages/RestaurantsPage/RestaurantsPage";
-import { NotFoundPage } from "./pages/NotFounPage/NotFoundPage";
-import RestaurantContainer from "./containers/Restaurant/Restaurant";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { MainPage } from './pages/Main/MainPage';
+import './index.css';
+import { BasketPage } from './pages/BasketPage/BasketPage';
+import { store } from './store/store';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { RestaurantsPage } from './pages/RestaurantsPage/RestaurantsPage';
+import { NotFoundPage } from './pages/NotFounPage/NotFoundPage';
+import RestaurantContainer from './containers/Restaurant/Restaurant';
+import { MenuPage } from './pages/MenuPage/MenuPage';
+import { ProductDetailsPage } from './pages/ProductDetailsPage/ProductDetailsPage';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <Provider store={store}>
@@ -22,6 +24,8 @@ root.render(
           <Route path=":id" element={<RestaurantContainer />} />
         </Route>
         <Route path="/basket" element={<BasketPage />} />
+        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/products/:id" element={<ProductDetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

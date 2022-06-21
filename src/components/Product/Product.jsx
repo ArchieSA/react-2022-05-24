@@ -2,6 +2,7 @@ import React from "react";
 import classnames from "classnames";
 
 import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
 
 export const Product = ({
   name,
@@ -9,10 +10,13 @@ export const Product = ({
   removeProduct,
   addProduct,
   className,
+  productId
 }) => {
   return (
     <div className={classnames(styles.root, className)}>
-      <span>{name}</span>
+      <Link to={`/products/${productId}`} className={styles.productLink}>
+        <span>{name}</span>
+      </Link>
       <div className={styles.actions}>
         <button
           onClick={removeProduct}

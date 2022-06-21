@@ -25,6 +25,7 @@ const ProductContainer = ({ productId, className }) => {
       removeProduct={onRemoveProduct}
       addProduct={onAddProduct}
       className={className}
+      productId={productId}
     />
   );
 };

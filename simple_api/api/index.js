@@ -7,13 +7,16 @@ router.get('/restaurants', (req, res, next) => {
 });
 
 router.get('/products', (req, res, next) => {
-  const { id } = req.query;
+  const { restaurantId, productId } = req.query;
   let result = products;
-  if (id) {
-    const restaurant = getById(restaurants)(id);
+  if (restaurantId) {
+    const restaurant = getById(restaurants)(restaurantId);
     if (restaurant) {
       result = restaurant.menu.map(getById(result));
     }
+  }
+  if (productId) {
+    result = products.find(product => product.id === productId) || null;
   }
   reply(res, result);
 });
