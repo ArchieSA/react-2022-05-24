@@ -9,6 +9,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { RestaurantsPage } from "./pages/RestaurantsPage/RestaurantsPage";
 import { NotFoundPage } from "./pages/NotFounPage/NotFoundPage";
 import RestaurantContainer from "./containers/Restaurant/Restaurant";
+import ProductsListPage from "./pages/ProductsList/ProductsList";
+import ProductDetailContainer from "./containers/ProductDetail/ProductDetail";
+import ProductDetailPage from "./pages/ProductDetail/ProductDetail";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -20,6 +23,10 @@ root.render(
         <Route path="/restaurants" element={<RestaurantsPage />}>
           <Route index element={<span>Select restaurant</span>} />
           <Route path=":id" element={<RestaurantContainer />} />
+        </Route>
+        <Route path="/products" element={<ProductsListPage />} />
+        <Route path="/product" element={<ProductDetailPage />}>
+          <Route path=":id" element={<ProductDetailContainer />} />
         </Route>
         <Route path="/basket" element={<BasketPage />} />
         <Route path="*" element={<NotFoundPage />} />

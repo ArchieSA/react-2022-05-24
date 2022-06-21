@@ -11,3 +11,9 @@ export const selectIsProductsLoading = (state) =>
   selectProductState(state).status === "loading";
 export const selectIsProductsFailed = (state) =>
   selectProductState(state).status === "failed";
+
+export const selectProducts = (state) =>
+  Object.values(selectProductState(state).entities);
+
+export const selectProductIsLoaded = (state, productId) =>
+  selectProductState(state).ids?.includes(productId);
