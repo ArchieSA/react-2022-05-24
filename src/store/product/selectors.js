@@ -1,3 +1,5 @@
+import { selectRestaurantState } from "../restaurant/selectors";
+
 export const selectProductState = (state) => state.product;
 
 export const selectProductIds = (state) => selectProductState(state).ids;
@@ -11,3 +13,19 @@ export const selectIsProductsLoading = (state) =>
   selectProductState(state).status === "loading";
 export const selectIsProductsFailed = (state) =>
   selectProductState(state).status === "failed";
+
+export const selectAllRestaurantProducts = (state) => {
+  const result = selectRestaurantState(state).ids.reduce((acc, id) => {
+    const restProducts = selectRestaurantState(state)?.entities[id]?.menu || [];
+    acc = [...acc, ...restProducts];
+    return acc;
+  }, []);
+
+  return result;
+};
+
+export const selectProducts = (state) =>
+  Object.values(selectProductState(state).entities);
+
+export const selectProductIsLoaded = (state, productId) =>
+  selectProductState(state).ids?.includes(productId);

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Menu from "../../components/Menu/Menu";
-import { loadProductsIfNotExist } from "../../store/product/thunk/load-product";
+import { loadProductsIfNotExist } from "../../store/product/thunk/load-products";
 import {
   selectIsProductsFailed,
   selectIsProductsLoading,

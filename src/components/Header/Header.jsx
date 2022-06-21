@@ -14,6 +14,9 @@ export const Header = () => {
       <Link to="/basket" className={styles.basketLink}>
         Basket
       </Link>
+      <Link to="/allmenu" className={styles.allMenuLink}>
+        Menu Restaurants
+      </Link>
     </header>
   );
 };

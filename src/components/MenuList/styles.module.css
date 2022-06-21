@@ -1,0 +1,17 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.productLink {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.productLink:hover {
+    background-color: #999999;
+}
