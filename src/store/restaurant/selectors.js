@@ -41,6 +41,8 @@ export const selectRestaurantReviewsById = (state, payload) =>
 
 export const selectRestaurantProductsById = (state, payload) =>
   selectRestaurantState(state)?.entities[payload.restaurantId]?.menu || [];
+export const selectRestaurantAllProducts = (state) =>
+    selectRestaurantState(state)?.entities || [];
 
 // const selectorTest = () => {
 //   const result1 = selectResult1();

@@ -1,11 +1,11 @@
 import { selectProductIds } from "../selectors";
 import productSlice from "../index";
-import { selectRestaurantProductsById } from "../../restaurant/selectors";
+import {selectRestaurantAllProducts, selectRestaurantProductsById} from "../../restaurant/selectors";
 
 export function loadProducts(restaurantId) {
   return function (dispatch, getState) {
     const productIds = selectProductIds(getState());
-    const restaurantProducts = selectRestaurantProductsById(getState());
+    const restaurantProducts = selectRestaurantAllProducts(getState());
 
     if (
         restaurantProducts.length > 0 &&
