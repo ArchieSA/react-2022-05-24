@@ -7,7 +7,6 @@ import {
   selectIsProductsLoading,
 } from "../../store/product/selectors";
 import { selectRestaurantProductsById } from "../../store/restaurant/selectors";
-import {loadProducts} from "../../store/product/thunk/load-all-product";
 
 export const MenuContainer = ({ restaurantId, ...props }) => {
   const dispatch = useDispatch();
@@ -20,9 +19,6 @@ export const MenuContainer = ({ restaurantId, ...props }) => {
   useEffect(() => {
     dispatch(loadProductsIfNotExist(restaurantId));
   }, [restaurantId]);
-  useEffect(() => {
-    dispatch(loadProducts(productIds));
-  }, [productIds]);
 
   if (isProductsFailed) {
     return <span>Error</span>;
