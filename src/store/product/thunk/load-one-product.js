@@ -6,7 +6,7 @@ import {
   selectRestaurants,
 } from "../../restaurant/selectors";
 
-export function loadProducts() {
+export function loadOneProduct() {
   return function (dispatch, getState) {
     const productIds = selectProductIds(getState());
     // console.log(productIds);
