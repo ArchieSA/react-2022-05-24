@@ -1,4 +1,4 @@
-import { selectProductIds } from "../selectors";
+import {selectProductById, selectProductIds} from "../selectors";
 import productSlice from "../index";
 import {
   selectAllRestaurantProducts,
@@ -6,28 +6,27 @@ import {
   selectRestaurants,
 } from "../../restaurant/selectors";
 
-export function loadOneProduct() {
+export function loadProductIfNot(productId) {
   return function (dispatch, getState) {
-    const productIds = selectProductIds(getState());
-    // console.log(productIds);
-    const restaurantProducts = selectAllRestaurantProducts(getState());
-    // console.log(restaurantProducts);
-    if (
-      restaurantProducts.length > 0 &&
-      restaurantProducts.every((productId) => productIds.includes(productId))
-    ) {
-      return;
+    const product =  selectProductById(getState(), productId);
+    if
+    (product) {
+        return
     }
 
     dispatch(productSlice.actions.startLoading(null));
 
-    fetch(`http://localhost:3001/api/products`)
-      .then((response) => response.json())
-      .then((products) => {
-        dispatch(productSlice.actions.successLoading(products));
-      })
-      .catch((error) => {
-        dispatch(productSlice.actions.failLoading(error));
-      });
+    fetch(
+        `http://localhost:3001/api/products?${new URLSearchParams({
+          id: productId,
+        }).toString()}`
+    )
+        .then((response) => response.json())
+        .then((products) => {
+          dispatch(productSlice.actions.successLoading(products));
+        })
+        .catch((error) => {
+          dispatch(productSlice.actions.failLoading(error));
+        });
   };
 }

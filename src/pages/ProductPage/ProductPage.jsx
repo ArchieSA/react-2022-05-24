@@ -1,13 +1,13 @@
 import { Layout } from "../../components/Layout/Layout";
 import ErrorBoundary from "../../components/ErrorBoundary/ErrorBoundary";
 import React from "react";
-import ProductsContainer from "../../containers/AllProducts/AllProducts";
+import ProductContainer from "../../containers/ProductContainer/ProductContainer";
 
 export const ProductPage = () => {
   return (
     <Layout>
       <ErrorBoundary>
-        <ProductsContainer />
+        <ProductContainer />
       </ErrorBoundary>
     </Layout>
   );

@@ -26,7 +26,7 @@ root.render(
         <Route path="/basket" element={<BasketPage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/products" element={<AllProductPage />} />
-        <Route path="/products/:id" element={<ProductPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
       </Routes>
     </BrowserRouter>
   </Provider>

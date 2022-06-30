@@ -8,7 +8,7 @@ import { loadProducts } from "../../store/product/thunk/load-all-product";
 const AllProductsContainer = ({ className }) => {
   const dispatch = useDispatch();
   const products = useSelector((state) => selectProducts(state));
-  console.log(products);
+  // console.log(products);
   useEffect(() => {
     dispatch(loadProducts());
   }, []);
