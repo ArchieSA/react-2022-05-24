@@ -21,7 +21,9 @@ root.render(
         <Route index element={<MainPage />} />
         <Route path="/restaurants" element={<RestaurantsPage />}>
           <Route index element={<span>Select restaurant</span>} />
-          <Route path=":id" element={<RestaurantContainer />} />
+          <Route path=":id" element={<RestaurantContainer />}>
+            <Route index element={<span>Select menu</span>} />
+          </Route>
         </Route>
         <Route path="/basket" element={<BasketPage />} />
         <Route path="*" element={<NotFoundPage />} />
