@@ -42,6 +42,19 @@ export const selectRestaurantReviewsById = (state, payload) =>
 export const selectRestaurantProductsById = (state, payload) =>
   selectRestaurantState(state)?.entities[payload.restaurantId]?.menu || [];
 
+export const selectAllRestaurantProducts = (state) => {
+  let arrays = Object.values(selectRestaurantState(state).entities).map(
+    (id) => id.menu || []
+  );
+  let newArr = [];
+  for (let i = 0; i < arrays.length; i++) {
+    for (let j = 0; j < arrays[i].length; j++) {
+      newArr.push(arrays[i][j]);
+    }
+  }
+  return newArr;
+};
+
 // const selectorTest = () => {
 //   const result1 = selectResult1();
 //   const result2 = selectResult2();

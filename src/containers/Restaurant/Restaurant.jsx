@@ -4,9 +4,9 @@ import {
   selectRestaurantById,
   selectRestaurantRating,
 } from "../../store/restaurant/selectors";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { loadReviewsIfNotExist } from "../../store/review/thunk/load-reviews";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 
 const RestaurantContainer = ({ className }) => {
   const { id: restaurantId } = useParams();
