@@ -5,6 +5,7 @@ import { Rating } from "../Rating/Rating";
 import { MenuContainer } from "../../containers/Menu/Menu";
 import { ReviewsContainer } from "../../containers/Reviews/Reviews";
 import { Outlet } from "react-router-dom";
+import {MenuReviewContainer} from "../../containers/MenuReviewContainer/MenuReviewContainer";
 
 export const Restaurant = ({ restaurant, rating }) => {
   return (
@@ -13,6 +14,7 @@ export const Restaurant = ({ restaurant, rating }) => {
         <span className={styles.restaurantName}>{restaurant.name}</span>
         <Rating value={rating} />
       </div>
+        <MenuReviewContainer />
       <div className={styles.detailedInfo}>
         {/*<MenuContainer restaurantId={restaurant.id} className={styles.menu} />*/}
         {/*<div className={styles.reviews}>*/}
