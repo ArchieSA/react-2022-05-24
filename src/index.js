@@ -15,6 +15,8 @@ import { Tabs } from "./components/Tabs/Tabs";
 import { MenuReviewContainer } from "./containers/MenuReviewContainer/MenuReviewContainer";
 import { MenuContainer } from "./containers/Menu/Menu";
 import MenuReview from "./containers/RestaurantMenuReview/MenuReview";
+import RestaurantMenu from "./containers/RestaurantMenu/RestaurantMenu";
+import RestaurantReview from "./containers/RestaurantReview/RestaurantReview";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -27,7 +29,9 @@ root.render(
           <Route index element={<span>Select restaurant</span>} />
           <Route path=":id" element={<RestaurantContainer />}>
             <Route index element={<MenuReviewContainer />} />
-            <Route path=":label" element={<MenuReview />} />
+            {/*<Route path=":label" element={<MenuReview />} />*/}
+            <Route path=":menu" element={<RestaurantMenu />} />
+            <Route path=":review" element={<RestaurantReview />} />
           </Route>
         </Route>
         <Route path="/basket" element={<BasketPage />} />
