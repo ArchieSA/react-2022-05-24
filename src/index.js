@@ -30,8 +30,8 @@ root.render(
           <Route path=":id" element={<RestaurantContainer />}>
             <Route index element={<MenuReviewContainer />} />
             {/*<Route path=":label" element={<MenuReview />} />*/}
-            <Route path=":menu" element={<RestaurantMenu />} />
-            <Route path=":review" element={<RestaurantReview />} />
+            <Route path="menu" element={<RestaurantMenu />} />
+            <Route path="review" element={<RestaurantReview />} />
           </Route>
         </Route>
         <Route path="/basket" element={<BasketPage />} />
