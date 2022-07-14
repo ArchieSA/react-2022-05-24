@@ -1,7 +1,7 @@
 import React from "react";
 import { Tab } from "../Tab/Tab";
-
 import styles from "./styles.module.css";
+
 const date = (id) => id;
 const dateLater = (label) => label;
 export const Tabs = ({ tabs }) => (
