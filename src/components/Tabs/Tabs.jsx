@@ -1,13 +1,23 @@
 import React from "react";
-import { Tab } from "../Tab/Tab";
 import styles from "./styles.module.css";
 
-const date = (id) => id;
-const dateLater = (label) => label;
-export const Tabs = ({ tabs }) => (
-  <div className={styles.root}>
-    {tabs.map(({ label, id }) => (
-      <Tab key={id} label={label} id={id} className={styles.tab} date={date} dateLater={dateLater} />
-    ))}
-  </div>
-);
+export const Tabs = ({
+  tabIds,
+  activeTabIndex,
+  onClick,
+  renderTab,
+  className,
+}) => {
+  return (
+    <div>
+      {tabIds.map(({ id, index }) =>
+        renderTab({
+          id,
+          onClick: () => onClick(index),
+          isActive: index === activeTabIndex,
+          // className: style.tab,
+        })
+      )}
+    </div>
+  );
+};

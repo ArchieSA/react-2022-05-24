@@ -54,6 +54,15 @@ export const selectAllRestaurantProducts = (state) => {
   }
   return newArr;
 };
+export const selectRestaurantIdsFilteredByName = (state, name) =>
+  //     [
+  //   "Dishoom",
+  //   "Homeslice",
+  //   "Fabrique",
+  // ];
+  selectRestaurantState(state).ids;
+export const selectRestaurantNameById = (state, restaurantId) =>
+  selectRestaurantById(state, restaurantId).name;
 
 // const selectorTest = () => {
 //   const result1 = selectResult1();

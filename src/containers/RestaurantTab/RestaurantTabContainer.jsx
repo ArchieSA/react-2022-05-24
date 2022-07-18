@@ -1,13 +1,12 @@
-import { Tabs } from "../../components/Tabs/Tabs";
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectRestaurants } from "../../store/restaurant/selectors";
-import {Tab} from "../../components/Tab/Tab";
+import { Tab } from "../../components/Tab/Tab";
+import useSelector from "../../store/Store/hooks/useSelector";
+import { selectRestaurantNameById } from "../../store/restaurant/selectors";
 
-export const RestaurantTabContainer = ({}) => {
+export const RestaurantTabContainer = ({ restaurantId, className }) => {
   const restaurantName = useSelector((state) =>
-      selectRestaurantNameById(state, restaurantId)
+    selectRestaurantNameById(state, restaurantId)
   );
 
-  return <Tab tabs={tabs} />;
+  return <Tab title={restaurantName} to={restaurantId} className={className} />;
 };

@@ -5,24 +5,24 @@ import PropTypes from "prop-types";
 import styles from "./styles.module.css";
 import { NavLink } from "react-router-dom";
 
-export const Tab = ({ label, id, className, date, dateLater }) => {
-    // console.log(date(id));
+export const Tab = ({ to, title }) => {
+  // console.log(date(id));
   return (
     <NavLink
-      to={`/restaurants/${date(id)}/${dateLater(label)}`}
+      to={to}
       className={({ isActive }) =>
-        classnames(styles.root, className, {
+        classnames(styles.root, {
           [styles.selected]: isActive,
         })
       }
     >
-      {label}
+      {title}
     </NavLink>
   );
 };
 
-Tab.propTypes = {
-  label: PropTypes.string.isRequired,
-  isSelected: PropTypes.bool,
-  className: PropTypes.string,
-};
+// Tab.propTypes = {
+//   label: PropTypes.string.isRequired,
+//   isSelected: PropTypes.bool,
+//   className: PropTypes.string,
+// };
