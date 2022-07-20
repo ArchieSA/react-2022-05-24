@@ -10,6 +10,7 @@ import { Outlet, useParams } from "react-router-dom";
 
 const RestaurantContainer = ({ className }) => {
   const { id: restaurantId } = useParams();
+  console.log({ id: restaurantId });
   const dispatch = useDispatch();
   const restaurant = useSelector((state) =>
     selectRestaurantById(state, restaurantId)

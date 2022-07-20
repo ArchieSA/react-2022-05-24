@@ -9,7 +9,7 @@ export const Tab = ({ to, title }) => {
   // console.log(date(id));
   return (
     <NavLink
-      to={to}
+      to={`/restaurants/${to}`}
       className={({ isActive }) =>
         classnames(styles.root, {
           [styles.selected]: isActive,
