@@ -54,10 +54,12 @@ export const selectAllRestaurantProducts = (state) => {
   }
   return newArr;
 };
-export const selectRestaurantIdsFilteredByName = (state, name) =>
+export const selectRestaurantIdsFilteredByName = (state) =>
   selectRestaurantState(state).ids;
 export const selectRestaurantNameById = (state, restaurantId) =>
-  selectRestaurantById(state, restaurantId).name;
+{console.log(restaurantId);
+return (
+  selectRestaurantById(state, restaurantId).name)};
 
 // const selectorTest = () => {
 //   const result1 = selectResult1();
