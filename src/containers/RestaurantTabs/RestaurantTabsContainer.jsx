@@ -9,11 +9,10 @@ import { useSearchParams } from "react-router-dom";
 import { RestaurantTabContainer } from "../RestaurantTab/RestaurantTabContainer";
 
 export const RestaurantTabsContainer = ({}) => {
-  const [searchParams] = useSearchParams();
+  // const [searchParams] = useSearchParams();
   const restaurantIds = useSelector((state) =>
     selectRestaurantIdsFilteredByName(
-      state,
-      searchParams.get("restaurantName") || ""
+      state
     )
   );
   console.log(restaurantIds);
