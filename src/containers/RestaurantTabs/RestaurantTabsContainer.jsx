@@ -11,9 +11,7 @@ import { RestaurantTabContainer } from "../RestaurantTab/RestaurantTabContainer"
 export const RestaurantTabsContainer = ({}) => {
   // const [searchParams] = useSearchParams();
   const restaurantIds = useSelector((state) =>
-    selectRestaurantIdsFilteredByName(
-      state
-    )
+    selectRestaurantIdsFilteredByName(state)
   );
   console.log(restaurantIds);
   if (restaurantIds?.length === 0) {
