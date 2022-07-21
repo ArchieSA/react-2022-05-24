@@ -13,7 +13,7 @@ export const RestaurantTabsContainer = ({}) => {
   const restaurantIds = useSelector((state) =>
     selectRestaurantIdsFilteredByName(state)
   );
-  console.log(restaurantIds);
+  // console.log(restaurantIds);
   if (restaurantIds?.length === 0) {
     return null;
   }

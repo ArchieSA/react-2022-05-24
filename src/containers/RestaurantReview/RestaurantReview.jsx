@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 const RestaurantReview = ({}) => {
   const params = useParams();
-  const id = params.id;
+  const id = params.to;
   // const label = params.label;
 
       return <ReviewsContainer restaurantId={id} />;

@@ -5,7 +5,8 @@ import { useParams } from "react-router-dom";
 
 const RestaurantMenu = ({}) => {
   const params = useParams();
-  const id = params.id;
+    console.log(params);
+  const id = params.to;
   // const label = params.label;
 
       return <MenuContainer restaurantId={id} />;

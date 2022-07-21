@@ -1,14 +1,28 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { TabsMenuReview } from "../../components/TabsMenuReview/TabsMenuReview";
+import {Tabs} from "../../components/Tabs/Tabs";
+import {MenuReviewTabContainer} from "../MenuReviewTabContainer/MenuReviewTabContainer";
 
 export const MenuReviewContainer = ({}) => {
-  const { id: restaurantId } = useParams();
-
+  const { to: restaurantId } = useParams();
+    // console.log({ to: restaurantId });
   const tabs = [
-    { label: "menu", restaurantId },
-    { label: "review", restaurantId },
+    "menu",
+    "review"
   ];
 
-  return <TabsMenuReview tabs={tabs} />;
+  return (
+      <Tabs
+          renderTab={({ id }) => (
+              <MenuReviewTabContainer
+                  key={id}
+                  restaurantId={restaurantId}
+                  className={{background: "none"}}
+                  name ={id}
+              />
+          )}
+          tabIds={tabs}
+          className={{backgroundColor: "#d7878745"}}
+      />
+  );
 };

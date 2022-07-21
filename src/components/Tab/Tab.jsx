@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import styles from "./styles.module.css";
 import { NavLink } from "react-router-dom";
 
-export const Tab = ({ to, title }) => {
+export const Tab = ({ to, title, className }) => {
   // console.log(date(id));
   return (
     <NavLink
@@ -15,6 +15,7 @@ export const Tab = ({ to, title }) => {
           [styles.selected]: isActive,
         })
       }
+      style={className}
     >
       {title}
     </NavLink>
