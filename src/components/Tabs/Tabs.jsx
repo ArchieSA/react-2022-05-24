@@ -9,13 +9,13 @@ export const Tabs = ({
   className,
 }) => {
   return (
-    <div>
-      {tabIds.map(({ id, index }) =>
+    <div className={styles.root}>
+      {tabIds.map(( id, index ) =>
         renderTab({
           id,
           onClick: () => onClick(index),
           isActive: index === activeTabIndex,
-          // className: style.tab,
+          className: styles.tab,
         })
       )}
     </div>
