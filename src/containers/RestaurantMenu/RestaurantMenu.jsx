@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { MenuContainer } from "../Menu/Menu";
-import { ReviewsContainer } from "../Reviews/Reviews";
 import { useParams } from "react-router-dom";
 
 const RestaurantMenu = ({}) => {

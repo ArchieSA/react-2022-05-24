@@ -9,7 +9,7 @@ export const Tabs = ({
 }) => {
   return (
     <div className = {classnames(styles.root)} style={className}>
-      {tabIds.map(( id, index ) =>
+      {tabIds.map(( id ) =>
         renderTab({
           id
         })

@@ -17,12 +17,6 @@ export const RestaurantTabsContainer = ({}) => {
   if (restaurantIds?.length === 0) {
     return null;
   }
-  // const { id: restaurantId } = useParams();
-
-  // const tabs = [
-  //   { label: "menu", restaurantId },
-  //   { label: "review", restaurantId },
-  // ];
 
   return (
     <Tabs
