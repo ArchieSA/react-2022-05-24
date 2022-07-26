@@ -7,8 +7,10 @@ import {
 } from "../../store/review/selectors";
 import { loadUsersIfNotExist } from "../../store/user/thunks/load-users";
 import { selectRestaurantReviewsById } from "../../store/restaurant/selectors";
+import {useParams} from "react-router-dom";
 
-export const ReviewsContainer = ({ restaurantId, ...props }) => {
+export const ReviewsContainer = ({ props }) => {
+  const {restaurantId} = useParams();
   const dispatch = useDispatch();
   const isReviewsLoading = useSelector(selectIsReviewsLoading);
   const isReviewsFailed = useSelector(selectIsReviewsFailed);

@@ -4,7 +4,7 @@ import {Tabs} from "../../components/Tabs/Tabs";
 import {MenuReviewTabContainer} from "../MenuReviewTabContainer/MenuReviewTabContainer";
 
 export const MenuReviewContainer = ({}) => {
-  const { to: restaurantId } = useParams();
+  const { restaurantId } = useParams();
     // console.log({ to: restaurantId });
   const tabs = [
     "menu",

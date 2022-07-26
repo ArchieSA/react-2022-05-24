@@ -14,6 +14,7 @@ export const selectRestaurants = (state) =>
   Object.values(selectRestaurantState(state).entities);
 
 const selectRestaurantReviewIds = (state, restaurantId) => {
+  // console.log(restaurantId);
   return selectRestaurantById(state, restaurantId).reviews;
 };
 
