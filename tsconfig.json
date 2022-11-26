@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "moduleResolution": "Node",
+    "allowJs": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "lib/types",
+    "jsx": "react",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  },
+//  "include": ["src"],
+  "include": ["src", "./typings.d.ts"],
+  "exclude": ["./src/store/restaurant/selectors.ts"]
+}

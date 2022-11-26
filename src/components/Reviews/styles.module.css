@@ -1,3 +1,8 @@
-.review {
-  margin-bottom: 20px;
+.mainWrapper {
+  display: block;
+}
+.reviews {
+  margin: 0 auto;
+  max-width: 908px;
+  padding-top: 20px;
 }

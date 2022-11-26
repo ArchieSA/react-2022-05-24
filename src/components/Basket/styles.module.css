@@ -1,12 +1,25 @@
-.root {
-  width: 400px;
-  height: 400px;
-  border: 1px solid grey;
-  border-radius: 20px;
-  padding: 20px;
-  box-sizing: border-box;
+.mainWrapper {
+  display: block;
+  padding: 30px;
 }
-
+.root {
+  max-width: 400px;
+  min-height: 100px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  /*box-sizing: border-box;*/
+  background-color: #fff0db;
+  margin: 0 auto;
+  padding: 10px 10px 20px 10px;
+}
+.title {
+  text-align: center;
+  margin: 0 auto 20px;
+}
 .product {
   margin-bottom: 10px;
+  padding: 0 20px;
+}
+.product:last-child {
+  margin-bottom: 0px;
 }

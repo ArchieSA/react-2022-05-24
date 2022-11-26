@@ -1,0 +1,19 @@
+.mainWrapper {
+  display: block;
+}
+.root {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 908px;
+  padding-top: 20px;
+}
+.product {
+  padding: 20px 25px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  max-width: 100%;
+  color: black;
+}
+.product:hover {
+  color: red;
+}

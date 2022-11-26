@@ -1,13 +1,13 @@
-const router = require('express').Router();
-const { restaurants, products, reviews, users } = require('./mock');
-const { reply, getById } = require('./utils');
+const router = require("express").Router();
+const { restaurants, products, reviews, users } = require("./mock");
+const { reply, getById } = require("./utils");
 
-router.get('/restaurants', (req, res, next) => {
+router.get("/restaurants", (req, res, next) => {
   reply(res, restaurants);
 });
 
-router.get('/products', (req, res, next) => {
-  const { id } = req.query;
+router.get("/products", (req, res, next) => {
+  const { id, productId } = req.query;
   let result = products;
   if (id) {
     const restaurant = getById(restaurants)(id);
@@ -15,10 +15,13 @@ router.get('/products', (req, res, next) => {
       result = restaurant.menu.map(getById(result));
     }
   }
+  if (!id && productId) {
+    result = getById(result)(productId);
+  }
   reply(res, result);
 });
 
-router.get('/reviews', (req, res, next) => {
+router.get("/reviews", (req, res, next) => {
   const { id } = req.query;
   let result = reviews;
   if (id) {
@@ -30,7 +33,7 @@ router.get('/reviews', (req, res, next) => {
   reply(res, result);
 });
 
-router.get('/users', (req, res, next) => {
+router.get("/users", (req, res, next) => {
   reply(res, users);
 });
 
